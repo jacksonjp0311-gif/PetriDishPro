@@ -31,3 +31,4 @@ artifacts/bio/runs/
 reports/bio/
 reports/latest_density_preview.svg
 *.bak
+# Public repo hygiene

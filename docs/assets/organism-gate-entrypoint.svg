@@ -1,28 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="560" viewBox="0 0 1280 560" role="img" aria-label="Organism Gate terminal entry point">
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="420" viewBox="0 0 1280 420" role="img" aria-label="Organism Gate terminal entry point graphic">
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#020712"/>
-      <stop offset="55%" stop-color="#06182c"/>
+      <stop offset="0%" stop-color="#030814"/>
+      <stop offset="55%" stop-color="#061528"/>
       <stop offset="100%" stop-color="#02060d"/>
     </linearGradient>
-    <filter id="cyanGlow">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.4" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-  <rect width="1280" height="560" rx="26" fill="url(#bg)"/>
-  <rect x="34" y="34" width="1212" height="492" rx="18" fill="#030913" stroke="#17eaf7" stroke-opacity="0.55" stroke-width="2"/>
-  <text x="78" y="94" fill="#21f7ff" font-family="Consolas, monospace" font-size="25" filter="url(#cyanGlow)">==============================================================</text>
-  <text x="116" y="137" fill="#21f7ff" font-family="Consolas, monospace" font-size="30" filter="url(#cyanGlow)">ORGANISM GATE  |  PETRI DISH PRO</text>
-  <text x="78" y="176" fill="#21f7ff" font-family="Consolas, monospace" font-size="25" filter="url(#cyanGlow)">==============================================================</text>
-  <text x="118" y="224" fill="#d9e8f9" font-family="Consolas, monospace" font-size="23">models simulate -&gt; humans validate -&gt; receipts govern claims</text>
-  <g font-family="Consolas, monospace" font-size="25" fill="#ffffff">
-    <text x="92" y="286">[1] Open Electron Microscope HUD</text>
-    <text x="92" y="326">[2] Run Microbial Competition</text>
-    <text x="92" y="366">[3] Run Antibiotic Selection</text>
-    <text x="92" y="406">[4] Run Cellular Tissue Interaction</text>
-    <text x="92" y="446">[5] Validation Tests</text>
-    <text x="92" y="486">[6] Latest Run Receipt   [7] Artifact Folder   [8] Roadmap   [Q] Quit</text>
+  <rect width="1280" height="420" rx="24" fill="url(#bg)"/>
+  <rect x="28" y="28" width="1224" height="364" rx="18" fill="#050b14" stroke="#12f7ff" stroke-opacity="0.48" stroke-width="2"/>
+  <g font-family="Consolas, monospace">
+    <text x="64" y="78" fill="#21f7ff" font-size="23" filter="url(#glow)">=========================================================</text>
+    <text x="104" y="116" fill="#21f7ff" font-size="27" filter="url(#glow)">ORGANISM GATE   |   PETRI DISH PRO</text>
+    <text x="64" y="150" fill="#21f7ff" font-size="23" filter="url(#glow)">=========================================================</text>
+    <text x="104" y="196" fill="#d7e6f7" font-size="21">models simulate -> humans validate -> receipts govern claims</text>
+    <text x="84" y="250" fill="#ffffff" font-size="24">[1] Open Electron Microscope HUD</text>
+    <text x="84" y="288" fill="#ffffff" font-size="24">[2] Run Microbial Competition</text>
+    <text x="84" y="326" fill="#ffffff" font-size="24">[3] Run Antibiotic Selection</text>
+    <text x="84" y="364" fill="#ffffff" font-size="24">[4] Run Cellular Tissue Interaction   [5] Validation Tests   [6] Latest Receipt   [8] Roadmap</text>
+    <text x="900" y="252" fill="#ffd86b" font-size="18">public-safe repo docs</text>
+    <text x="900" y="286" fill="#21f7ff" font-size="18">no local file paths</text>
+    <text x="900" y="320" fill="#21f7ff" font-size="18">generic clone + launch</text>
   </g>
-  <text x="865" y="486" fill="#ffd86b" font-family="Consolas, monospace" font-size="18">registry-driven live microscope</text>
 </svg>

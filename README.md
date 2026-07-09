@@ -50,8 +50,8 @@ See [`docs/ENTRYPOINT.md`](docs/ENTRYPOINT.md) for the full entry-point contract
 Clone the repository and enter the project directory:
 
 ```powershell
-git clone https://github.com/jacksonjp0311-gif/-PetriDishPro.git
-cd -PetriDishPro
+git clone https://github.com/jacksonjp0311-gif/PetriDishPro.git
+cd PetriDishPro
 ```
 
 Install Python dependencies:
