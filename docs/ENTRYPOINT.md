@@ -1,6 +1,6 @@
 # Entry Point: Organism Gate
 
-The primary human-facing entry point is the **Organism Gate** terminal menu. It opens the Electron microscope HUD, runs simulation presets, executes validation tests, and opens receipts/artifacts.
+The primary human-facing entry point is the **Organism Gate** terminal menu. It is the control surface that opens the Electron microscope HUD, runs simulation presets, executes validation tests, and opens receipts/artifacts.
 
 ![Organism Gate terminal entry point](assets/organism-gate-entrypoint.svg)
 
@@ -22,21 +22,28 @@ models simulate -> humans validate -> receipts govern claims
 [Q] Quit
 ```
 
-## Detected entry files
+## Launch
 
-- `START_ORGANISM_GATE.bat`
-- `ORGANISM_GATE.ps1`
-- `ORGANISM_GATE_CORE_004O.ps1`
-- `RUN_DEMO_ALL_ONE.ps1`
-- `RUN_TESTS_DIGEST.ps1`
+From the repository root:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\ORGANISM_GATE.ps1
+```
+
+Alternative Windows launcher:
+
+```powershell
+.\START_ORGANISM_GATE.bat
+```
 
 ## Operating model
 
-1. Launch the Organism Gate entry point from the repository root.
-2. Use option `[1]` to open the Electron microscope HUD.
-3. Use preset options to run educational organism simulations.
-4. Use validation and receipt options before making public claims.
-5. Treat receipts and claim boundaries as part of the application state.
+1. Clone the repository.
+2. Launch the Organism Gate entry point from the repository root.
+3. Use option `[1]` to open the Electron microscope HUD.
+4. Use preset options to run educational organism simulations.
+5. Use validation and receipt options before making public claims.
+6. Treat receipts and claim boundaries as part of the application state.
 
 ## Claim boundary
 

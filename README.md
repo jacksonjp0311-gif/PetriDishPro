@@ -27,13 +27,65 @@ PetriDishPro combines:
 
 The main entry point is **Organism Gate**, a terminal menu that opens the HUD, runs presets, validates the project, and opens artifacts.
 
-Detected entry candidate:
-
 ```text
-START_ORGANISM_GATE.bat
+ORGANISM GATE | PETRI DISH PRO
+
+models simulate -> humans validate -> receipts govern claims
+
+[1] Open Electron Microscope HUD
+[2] Run Microbial Competition
+[3] Run Antibiotic Selection
+[4] Run Cellular Tissue Interaction
+[5] Validation Tests
+[6] Latest Run Receipt
+[7] Open Artifact Folder
+[8] Roadmap
+[Q] Quit
 ```
 
 See [`docs/ENTRYPOINT.md`](docs/ENTRYPOINT.md) for the full entry-point contract.
+
+## Quick start
+
+Clone the repository and enter the project directory:
+
+```powershell
+git clone https://github.com/jacksonjp0311-gif/-PetriDishPro.git
+cd -PetriDishPro
+```
+
+Install Python dependencies:
+
+```powershell
+python -m pip install -r requirements.txt
+```
+
+Launch the Organism Gate menu from the repository root:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\ORGANISM_GATE.ps1
+```
+
+Alternative Windows launcher:
+
+```powershell
+.\START_ORGANISM_GATE.bat
+```
+
+## Validation
+
+Run the validation suite before publishing claims:
+
+```powershell
+python -m unittest discover -s tests
+```
+
+Expected state:
+
+```text
+Ran 37 tests
+OK
+```
 
 ## Tool capabilities
 
@@ -61,34 +113,9 @@ See [`docs/TOOL_CAPABILITIES.md`](docs/TOOL_CAPABILITIES.md) for the full capabi
 - **Drug Lab HUD:** educational drug interaction card surface.
 - **Receipts:** run identity, selected organisms, preset, and validation state.
 
-## Directory map
+## Project structure
 
 See [`docs/PROJECT_STRUCTURE.md`](docs/PROJECT_STRUCTURE.md) for the generated structure guide.
-
-## Quick start
-
-From the repository root on Windows:
-
-```powershell
-cd "C:\Users\jacks\OneDrive\Desktop\PetriDishPro"
-```
-
-Then launch the Organism Gate entry point using the project launcher/menu script available in the repo root.
-
-## Validation
-
-Run the validation suite before publishing claims:
-
-```powershell
-python -m unittest discover -s tests
-```
-
-The expected working state for the recent sealed UI work is:
-
-```text
-Ran 37 tests
-OK
-```
 
 ## Development status
 
@@ -103,8 +130,20 @@ Current focus areas:
 
 ## Claim boundary
 
-PetriDishPro can visualize simplified biology-inspired dynamics, but it does not provide clinical advice, diagnosis, treatment guidance, dosing recommendations, wet-lab protocols, antimicrobial susceptibility results, antibody-affinity measurements, species identification, or biosafety instructions.
+PetriDishPro can visualize simplified biology-inspired dynamics, but it does not provide:
+
+- clinical advice,
+- medical diagnosis,
+- treatment guidance,
+- dosing recommendations,
+- wet-lab protocols,
+- antimicrobial susceptibility results,
+- antibody-affinity measurements,
+- species identification,
+- biosafety instructions.
+
+Use it as an educational simulation and visualization platform only.
 
 ## License
 
-This repository is currently published under the MIT License.
+This repository is published under the MIT License.

@@ -1,6 +1,6 @@
 # Tool Capabilities
 
-PetriDishPro is organized around user-facing tools and internal validation surfaces.
+PetriDishPro is organized around a small set of user-facing tools and internal validation surfaces.
 
 ## User-facing tools
 
@@ -16,7 +16,7 @@ PetriDishPro is organized around user-facing tools and internal validation surfa
 | Emergent conditions | Summarizes high-level simulation state signals. |
 | Drug Lab HUD | Provides an educational overlay for drug-card interaction modeling and response proxies. |
 | Validation tests | Runs the project validation suite before claims or release. |
-| Latest receipt | Opens the most recent run receipt/artifact state. |
+| Latest receipt | Opens the most recent run receipt/artifact for review. |
 
 ## Preset families
 
@@ -42,3 +42,5 @@ PetriDishPro follows a receipts-first workflow:
 ```text
 models simulate -> humans validate -> receipts govern claims
 ```
+
+The project should not make stronger claims than the available source gates, validation output, and receipts support.

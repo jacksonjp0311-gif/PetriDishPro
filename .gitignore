@@ -25,3 +25,9 @@ reports/bio/unit_stderr*.txt
 reports/bio/failure_digest_latest.*
 reports/bio/unit_digest_*.json
 Thumbs.db
+.petri_backups/
+backups/
+artifacts/bio/runs/
+reports/bio/
+reports/latest_density_preview.svg
+*.bak
