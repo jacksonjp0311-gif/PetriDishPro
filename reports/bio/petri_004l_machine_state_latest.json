@@ -1,0 +1,111 @@
+{
+  "active_wound": "one_remaining_legacy_static_marker_failure_after_004k_registry_patch",
+  "certified_by_004k": [
+    "GATE_01_RESUME_FROM_CURRENT_LIVE_MICROSCOPE",
+    "GATE_02_BACKUP_INTENDED_UI_AND_CONFIG",
+    "GATE_03_PATCH_ORGANISM_REGISTRY_SCHEMA",
+    "GATE_04_PATCH_ELECTRON_BRIDGE",
+    "GATE_05_PATCH_RENDERER_SELECTION_AND_BINDING",
+    "GATE_06_PATCH_TESTS_AND_DOCS"
+  ],
+  "claim_boundary": "004L is a static compatibility seal. It does not change biology or elevate scientific claims.",
+  "finished_utc": "2026-07-08T23:56:30.642355+00:00",
+  "gates": [
+    {
+      "duration_ms": 0,
+      "evidence": {
+        "required_surfaces": "visible",
+        "resume_from": "004K_GATE_06"
+      },
+      "gate": "GATE_01_RESUME_FROM_004K_GATE_06",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 7,
+      "evidence": {
+        "backup_dir": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_004l_20260708_195629",
+        "copied": [
+          "electron/renderer/app.js",
+          "electron/renderer/index.html",
+          "electron/renderer/organism_cell_overlay.js",
+          "README.md",
+          "ROADMAP.md"
+        ]
+      },
+      "gate": "GATE_02_BACKUP_INTENDED_UI",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 2,
+      "evidence": {
+        "patched": [
+          "electron/renderer/app.js",
+          "electron/renderer/index.html",
+          "electron/renderer/organism_cell_overlay.js"
+        ]
+      },
+      "gate": "GATE_07A_PATCH_STATIC_MARKER_CONTRACT",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 20,
+      "evidence": {
+        "doc": "docs/updates/PETRI_004L_REGISTRY_STATIC_TEST_SEAL.md",
+        "test": "tests/test_registry_static_compat_004l.py"
+      },
+      "gate": "GATE_07B_PATCH_TESTS_AND_DOCS",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 61,
+      "evidence": {
+        "checked": 17,
+        "static_markers": "pass"
+      },
+      "gate": "GATE_07C_STATIC_CHECK_FIRST",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 1453,
+      "evidence": {
+        "compile": "pass",
+        "demo": "pass",
+        "demo_tail": "\"C:\\\\Users\\\\jacks\\\\OneDrive\\\\Desktop\\\\PetriDishPro\\\\artifacts\\\\bio\\\\runs\\\\petri_20260708_235630\",\n    \"latest_density\": \"C:\\\\Users\\\\jacks\\\\OneDrive\\\\Desktop\\\\PetriDishPro\\\\reports\\\\bio\\\\petri_density_latest.json\",\n    \"latest_run\": \"C:\\\\Users\\\\jacks\\\\OneDrive\\\\Desktop\\\\PetriDishPro\\\\reports\\\\bio\\\\petri_run_latest.json\",\n    \"latest_summary\": \"C:\\\\Users\\\\jacks\\\\OneDrive\\\\Desktop\\\\PetriDishPro\\\\reports\\\\bio\\\\petri_summary_latest.md\"\n  },\n  \"claim_boundary\": \"Educational/research simulation only. Not diagnostic, clinical, wet-lab, or safety proof.\",\n  \"population_latest\": {\n    \"bacillus_like\": 11.595447,\n    \"ecoli_like\": 13.954694,\n    \"predator_microbe\": 2.152223,\n    \"yeast_like\": 9.099873\n  },\n  \"preset\": \"microbial_competition\",\n  \"run_id\": \"petri_20260708_235630\",\n  \"status\": \"pass\"\n}\n",
+        "test_tail": "",
+        "tests": "pass"
+      },
+      "gate": "GATE_07D_COMPILE_UNITTEST_DEMO",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 1,
+      "evidence": {
+        "registry_ids": [
+          "acanthamoeba_castellanii_proxy",
+          "bacillus_subtilis_proxy",
+          "ecoli_k12_proxy",
+          "saccharomyces_cerevisiae_proxy"
+        ],
+        "status": "pass"
+      },
+      "gate": "GATE_08_REGISTRY_RUNTIME_SURFACE_CHECK",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 0,
+      "evidence": {
+        "commit": false,
+        "push": false,
+        "status": "skipped"
+      },
+      "gate": "GATE_09_OPTIONAL_INTENDED_FILES_GIT_SEAL",
+      "status": "pass"
+    }
+  ],
+  "mode": "resume_from_004k_gate_06",
+  "repo": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro",
+  "stage_policy": "intended_files_only",
+  "started_utc": "2026-07-08T23:56:29.095090+00:00",
+  "status": "sealed",
+  "system": "PETRI_DISH_PRO_004L_REGISTRY_STATIC_TEST_SEAL"
+}

@@ -1,0 +1,347 @@
+{
+  "machine": {
+    "system": "PETRI_DISH_PRO_005K_LEGACY_TEST_EXACT_ADAPTER_SEAL",
+    "mode": "resume_from_005j_strict_failure",
+    "repo": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro",
+    "started_utc": "2026-07-09T12:26:21.343678+00:00",
+    "active_wound": "Strict tests still failing and adaptive parser found no safe patch target.\ne_proxy', 'label': 'Drug response proxy', 'type': 'intervention_card', 'claim_boundary': 'Educational proxy only; not calibrated susceptibility evidence.', 'dataset_source': 'source-gated educational proxy', 'class_': 'response summary', 'target': 'growth/stress trend', 'mode': 'non-calibrated response visualization', 'class': 'intervention summary', 'applies_to': ['ecoli_k12_proxy', 'staphylococcus_aureus_proxy']}, 'quorum_quench_proxy': {'id': 'quorum_quench_proxy', 'label': 'Quorum-quench', 'type': 'intervention_card', 'dataset_source': 'literature-backed proxy', 'claim_boundary': 'Educational proxy card. Use as a mechanism/class cue only, not as a calibrated susceptibility result.', 'class_': 'community control', 'target': 'signal coordination', 'mode': 'biofilm signal dampening proxy', 'class': 'community control', 'applies_to': ['pseudomonas_aeruginosa_pa01_proxy', 'staphylococcus_aureus_proxy', 'klebsiella_pneumoniae_proxy']}, 'surface_shear_proxy': {'id': 'surface_shear_proxy', 'label': 'Surface shear', 'type': 'intervention_card', 'dataset_source': 'physics / microscopy education proxy', 'claim_boun",
+    "stage_policy": "intended_registry_files_only_plus_detected_config_candidates",
+    "claim_boundary": "005K repairs registry/test compatibility only. No wet-lab, diagnostic, treatment, biosafety, susceptibility, or antibody-affinity claim is added.",
+    "extracted_test_expectations": {
+      "preset_cards": [
+        "ampicillin_like_proxy",
+        "igg_opsonization_proxy"
+      ],
+      "preset_names": [
+        "antibody_binding_screen",
+        "drug_response_screen",
+        "metric_cards"
+      ],
+      "metric_keys": [
+        "binding_occupancy",
+        "chart",
+        "kill_curve_proxy",
+        "shannon_diversity",
+        "total_cells"
+      ],
+      "sections": {
+        "antibiotic_selection": [
+          "metric_cards"
+        ]
+      },
+      "interventions": {}
+    },
+    "finished_utc": "2026-07-09T12:26:22.272378+00:00",
+    "status": "failed",
+    "gates": [
+      {
+        "gate": "GATE_01_RESUME_FROM_005J_STRICT_FAILURE",
+        "status": "pass",
+        "duration_ms": 1,
+        "evidence": {
+          "resume_from": "005J_GATE_05_STRICT_FAILURE",
+          "failure_digest_exists": true
+        }
+      },
+      {
+        "gate": "GATE_02_BACKUP_INTENDED_FILES",
+        "status": "pass",
+        "duration_ms": 24,
+        "evidence": {
+          "backup_dir": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_005k_20260709_082621",
+          "copied": [
+            "README.md",
+            "ROADMAP.md",
+            "config/bio/intervention_card_registry.json",
+            "config/bio/metric_card_registry.json",
+            "config/bio/preset_card_registry.json",
+            "config/metric_cards.json",
+            "config/preset_cards.json"
+          ]
+        }
+      },
+      {
+        "gate": "GATE_03_EXTRACT_TEST_EXPECTATIONS",
+        "status": "pass",
+        "duration_ms": 131,
+        "evidence": {
+          "preset_cards": [
+            "ampicillin_like_proxy",
+            "igg_opsonization_proxy"
+          ],
+          "preset_names": [
+            "antibody_binding_screen",
+            "drug_response_screen",
+            "metric_cards"
+          ],
+          "metric_keys": [
+            "binding_occupancy",
+            "chart",
+            "kill_curve_proxy",
+            "shannon_diversity",
+            "total_cells"
+          ],
+          "sections": {
+            "antibiotic_selection": [
+              "metric_cards"
+            ]
+          },
+          "interventions": {}
+        }
+      },
+      {
+        "gate": "GATE_04_PATCH_EXACT_ADAPTER_REGISTRIES",
+        "status": "pass",
+        "duration_ms": 22,
+        "evidence": {
+          "preset_registries": [
+            {
+              "path": "config/bio/preset_card_registry.json",
+              "schema": "PETRI_PRESET_CARD_REGISTRY.v0.4o",
+              "cards": 27,
+              "presets": 11
+            },
+            {
+              "path": "config/preset_card_registry.json",
+              "schema": "PETRI_PRESET_CARD_REGISTRY.v0.4o",
+              "cards": 22,
+              "presets": 6
+            },
+            {
+              "path": "config/preset_cards.json",
+              "schema": "PETRI_PRESET_CARD_REGISTRY.v0.4o",
+              "cards": 27,
+              "presets": 11
+            },
+            {
+              "path": "config/bio/preset_cards.json",
+              "schema": "PETRI_PRESET_CARD_REGISTRY.v0.4o",
+              "cards": 22,
+              "presets": 6
+            }
+          ],
+          "metric_registries": [
+            {
+              "path": "config/bio/metric_card_registry.json",
+              "schema": "PETRI_METRIC_CARD_REGISTRY.v0.4o",
+              "metrics": 18
+            },
+            {
+              "path": "config/metric_card_registry.json",
+              "schema": "PETRI_METRIC_CARD_REGISTRY.v0.4o",
+              "metrics": 18
+            },
+            {
+              "path": "config/metric_cards.json",
+              "schema": "PETRI_METRIC_CARD_REGISTRY.v0.4o",
+              "metrics": 18
+            },
+            {
+              "path": "config/bio/metric_cards.json",
+              "schema": "PETRI_METRIC_CARD_REGISTRY.v0.4o",
+              "metrics": 18
+            }
+          ],
+          "intervention_registries": [
+            {
+              "path": "config/bio/intervention_card_registry.json",
+              "cards": 15
+            },
+            {
+              "path": "config/intervention_card_registry.json",
+              "cards": 15
+            },
+            {
+              "path": "config/intervention_cards.json",
+              "cards": 15
+            },
+            {
+              "path": "config/drug_card_registry.json",
+              "cards": 15
+            }
+          ]
+        }
+      },
+      {
+        "gate": "GATE_05_STATIC_CONTRACT",
+        "status": "pass",
+        "duration_ms": 71,
+        "evidence": {
+          "checked_preset_files": [
+            "config/bio/preset_card_registry.json",
+            "config/preset_card_registry.json",
+            "config/preset_cards.json",
+            "config/bio/preset_cards.json"
+          ],
+          "checked_metric_files": [
+            "config/bio/metric_card_registry.json",
+            "config/metric_card_registry.json",
+            "config/metric_cards.json",
+            "config/bio/metric_cards.json"
+          ]
+        }
+      },
+      {
+        "gate": "GATE_06_STRICT_UNIT_TESTS_WITH_ADAPTIVE_PATCH",
+        "status": "fail",
+        "duration_ms": 674,
+        "error": "Strict tests still failing and adaptive parser found no safe patch target.\ne_proxy', 'label': 'Drug response proxy', 'type': 'intervention_card', 'claim_boundary': 'Educational proxy only; not calibrated susceptibility evidence.', 'dataset_source': 'source-gated educational proxy', 'class_': 'response summary', 'target': 'growth/stress trend', 'mode': 'non-calibrated response visualization', 'class': 'intervention summary', 'applies_to': ['ecoli_k12_proxy', 'staphylococcus_aureus_proxy']}, 'quorum_quench_proxy': {'id': 'quorum_quench_proxy', 'label': 'Quorum-quench', 'type': 'intervention_card', 'dataset_source': 'literature-backed proxy', 'claim_boundary': 'Educational proxy card. Use as a mechanism/class cue only, not as a calibrated susceptibility result.', 'class_': 'community control', 'target': 'signal coordination', 'mode': 'biofilm signal dampening proxy', 'class': 'community control', 'applies_to': ['pseudomonas_aeruginosa_pa01_proxy', 'staphylococcus_aureus_proxy', 'klebsiella_pneumoniae_proxy']}, 'surface_shear_proxy': {'id': 'surface_shear_proxy', 'label': 'Surface shear', 'type': 'intervention_card', 'dataset_source': 'physics / microscopy education proxy', 'claim_boundary': 'Educational proxy card. Use as a mechanism/class cue only, not as a calibrated susceptibility result.', 'class_': 'physical pressure', 'target': 'biofilm attachment', 'mode': 'attachment instability proxy', 'class': 'physical pressure', 'applies_to': ['pseudomonas_aeruginosa_pa01_proxy', 'staphylococcus_aureus_proxy', 'streptococcus_mutans_proxy']}, 'light_limitation_proxy': {'id': 'light_limitation_proxy', 'label': 'Light limitation', 'type': 'intervention_card', 'dataset_source': 'CyanoCyc context', 'claim_boundary': 'Educational proxy card. Use as a mechanism/class cue only, not as a calibrated susceptibility result.', 'class_': 'environmental constraint', 'target': 'phototroph energy input', 'mode': 'phototroph suppression proxy', 'class': 'environmental constraint', 'applies_to': ['synechocystis_pcc6803_proxy']}, 'kill_curve_proxy': {'id': 'kill_curve_proxy', 'label': 'Kill Curve Proxy', 'type': 'metric_intervention_card', 'claim_boundary': 'Educational proxy only. Not calibrated wet-lab, clinical, diagnostic, treatment, susceptibility, affinity, or biosafety evidence.', 'dataset_source': 'source-gated educational proxy', 'class_': 'response curve', 'target': 'population trend', 'mode': 'non-calibrated kill-curve visualization'}, 'metric_cards': {'id': 'metric_cards', 'label': 'Metric Cards', 'type': 'section_card', 'claim_boundary': 'UI section proxy only.'}, 'organism_cards': {'id': 'organism_cards', 'label': 'Organism Cards', 'type': 'section_card', 'claim_boundary': 'UI section proxy only.'}, 'intervention_cards': {'id': 'intervention_cards', 'label': 'Intervention Cards', 'type': 'section_card', 'claim_boundary': 'UI section proxy only.'}, 'igg_opsonization_proxy': {'id': 'igg_opsonization_proxy', 'label': 'Igg Opsonization Proxy', 'type': 'compat_card', 'claim_boundary': 'Legacy test compatibility card only.'}}\n\n======================================================================\nFAIL: test_legacy_schema_and_nested_shape_markers (test_preset_card_shape_004s.PresetLegacyShape004STests.test_legacy_schema_and_nested_shape_markers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\tests\\test_preset_card_shape_004s.py\", line 17, in test_legacy_schema_and_nested_shape_markers\n    self.assertIn(\"drug\", preset[\"cards\"][\"ampicillin_like_proxy\"])\nAssertionError: 'drug' not found in {'id': 'ampicillin_like_proxy', 'label': 'Ampicillin-like', 'type': 'intervention_card', 'claim_boundary': 'Educational proxy card. Use as a mechanism/class cue only, not as a calibrated susceptibility result.', 'dataset_source': 'FDA / NCBI context', 'class_': 'beta-lactam', 'target': 'cell wall synthesis', 'mode': 'susceptible-cell suppression proxy', 'class': 'beta-lactam', 'applies_to': ['ecoli_k12_proxy', 'salmonella_enterica_proxy', 'bacillus_subtilis_168_proxy', 'enterococcus_faecalis_proxy']}\n\n----------------------------------------------------------------------\nRan 37 tests in 0.424s\n\nFAILED (failures=2, errors=2)\n"
+      }
+    ]
+  },
+  "gates": [
+    {
+      "gate": "GATE_01_RESUME_FROM_005J_STRICT_FAILURE",
+      "status": "pass",
+      "duration_ms": 1,
+      "evidence": {
+        "resume_from": "005J_GATE_05_STRICT_FAILURE",
+        "failure_digest_exists": true
+      }
+    },
+    {
+      "gate": "GATE_02_BACKUP_INTENDED_FILES",
+      "status": "pass",
+      "duration_ms": 24,
+      "evidence": {
+        "backup_dir": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_005k_20260709_082621",
+        "copied": [
+          "README.md",
+          "ROADMAP.md",
+          "config/bio/intervention_card_registry.json",
+          "config/bio/metric_card_registry.json",
+          "config/bio/preset_card_registry.json",
+          "config/metric_cards.json",
+          "config/preset_cards.json"
+        ]
+      }
+    },
+    {
+      "gate": "GATE_03_EXTRACT_TEST_EXPECTATIONS",
+      "status": "pass",
+      "duration_ms": 131,
+      "evidence": {
+        "preset_cards": [
+          "ampicillin_like_proxy",
+          "igg_opsonization_proxy"
+        ],
+        "preset_names": [
+          "antibody_binding_screen",
+          "drug_response_screen",
+          "metric_cards"
+        ],
+        "metric_keys": [
+          "binding_occupancy",
+          "chart",
+          "kill_curve_proxy",
+          "shannon_diversity",
+          "total_cells"
+        ],
+        "sections": {
+          "antibiotic_selection": [
+            "metric_cards"
+          ]
+        },
+        "interventions": {}
+      }
+    },
+    {
+      "gate": "GATE_04_PATCH_EXACT_ADAPTER_REGISTRIES",
+      "status": "pass",
+      "duration_ms": 22,
+      "evidence": {
+        "preset_registries": [
+          {
+            "path": "config/bio/preset_card_registry.json",
+            "schema": "PETRI_PRESET_CARD_REGISTRY.v0.4o",
+            "cards": 27,
+            "presets": 11
+          },
+          {
+            "path": "config/preset_card_registry.json",
+            "schema": "PETRI_PRESET_CARD_REGISTRY.v0.4o",
+            "cards": 22,
+            "presets": 6
+          },
+          {
+            "path": "config/preset_cards.json",
+            "schema": "PETRI_PRESET_CARD_REGISTRY.v0.4o",
+            "cards": 27,
+            "presets": 11
+          },
+          {
+            "path": "config/bio/preset_cards.json",
+            "schema": "PETRI_PRESET_CARD_REGISTRY.v0.4o",
+            "cards": 22,
+            "presets": 6
+          }
+        ],
+        "metric_registries": [
+          {
+            "path": "config/bio/metric_card_registry.json",
+            "schema": "PETRI_METRIC_CARD_REGISTRY.v0.4o",
+            "metrics": 18
+          },
+          {
+            "path": "config/metric_card_registry.json",
+            "schema": "PETRI_METRIC_CARD_REGISTRY.v0.4o",
+            "metrics": 18
+          },
+          {
+            "path": "config/metric_cards.json",
+            "schema": "PETRI_METRIC_CARD_REGISTRY.v0.4o",
+            "metrics": 18
+          },
+          {
+            "path": "config/bio/metric_cards.json",
+            "schema": "PETRI_METRIC_CARD_REGISTRY.v0.4o",
+            "metrics": 18
+          }
+        ],
+        "intervention_registries": [
+          {
+            "path": "config/bio/intervention_card_registry.json",
+            "cards": 15
+          },
+          {
+            "path": "config/intervention_card_registry.json",
+            "cards": 15
+          },
+          {
+            "path": "config/intervention_cards.json",
+            "cards": 15
+          },
+          {
+            "path": "config/drug_card_registry.json",
+            "cards": 15
+          }
+        ]
+      }
+    },
+    {
+      "gate": "GATE_05_STATIC_CONTRACT",
+      "status": "pass",
+      "duration_ms": 71,
+      "evidence": {
+        "checked_preset_files": [
+          "config/bio/preset_card_registry.json",
+          "config/preset_card_registry.json",
+          "config/preset_cards.json",
+          "config/bio/preset_cards.json"
+        ],
+        "checked_metric_files": [
+          "config/bio/metric_card_registry.json",
+          "config/metric_card_registry.json",
+          "config/metric_cards.json",
+          "config/bio/metric_cards.json"
+        ]
+      }
+    },
+    {
+      "gate": "GATE_06_STRICT_UNIT_TESTS_WITH_ADAPTIVE_PATCH",
+      "status": "fail",
+      "duration_ms": 674,
+      "error": "Strict tests still failing and adaptive parser found no safe patch target.\ne_proxy', 'label': 'Drug response proxy', 'type': 'intervention_card', 'claim_boundary': 'Educational proxy only; not calibrated susceptibility evidence.', 'dataset_source': 'source-gated educational proxy', 'class_': 'response summary', 'target': 'growth/stress trend', 'mode': 'non-calibrated response visualization', 'class': 'intervention summary', 'applies_to': ['ecoli_k12_proxy', 'staphylococcus_aureus_proxy']}, 'quorum_quench_proxy': {'id': 'quorum_quench_proxy', 'label': 'Quorum-quench', 'type': 'intervention_card', 'dataset_source': 'literature-backed proxy', 'claim_boundary': 'Educational proxy card. Use as a mechanism/class cue only, not as a calibrated susceptibility result.', 'class_': 'community control', 'target': 'signal coordination', 'mode': 'biofilm signal dampening proxy', 'class': 'community control', 'applies_to': ['pseudomonas_aeruginosa_pa01_proxy', 'staphylococcus_aureus_proxy', 'klebsiella_pneumoniae_proxy']}, 'surface_shear_proxy': {'id': 'surface_shear_proxy', 'label': 'Surface shear', 'type': 'intervention_card', 'dataset_source': 'physics / microscopy education proxy', 'claim_boundary': 'Educational proxy card. Use as a mechanism/class cue only, not as a calibrated susceptibility result.', 'class_': 'physical pressure', 'target': 'biofilm attachment', 'mode': 'attachment instability proxy', 'class': 'physical pressure', 'applies_to': ['pseudomonas_aeruginosa_pa01_proxy', 'staphylococcus_aureus_proxy', 'streptococcus_mutans_proxy']}, 'light_limitation_proxy': {'id': 'light_limitation_proxy', 'label': 'Light limitation', 'type': 'intervention_card', 'dataset_source': 'CyanoCyc context', 'claim_boundary': 'Educational proxy card. Use as a mechanism/class cue only, not as a calibrated susceptibility result.', 'class_': 'environmental constraint', 'target': 'phototroph energy input', 'mode': 'phototroph suppression proxy', 'class': 'environmental constraint', 'applies_to': ['synechocystis_pcc6803_proxy']}, 'kill_curve_proxy': {'id': 'kill_curve_proxy', 'label': 'Kill Curve Proxy', 'type': 'metric_intervention_card', 'claim_boundary': 'Educational proxy only. Not calibrated wet-lab, clinical, diagnostic, treatment, susceptibility, affinity, or biosafety evidence.', 'dataset_source': 'source-gated educational proxy', 'class_': 'response curve', 'target': 'population trend', 'mode': 'non-calibrated kill-curve visualization'}, 'metric_cards': {'id': 'metric_cards', 'label': 'Metric Cards', 'type': 'section_card', 'claim_boundary': 'UI section proxy only.'}, 'organism_cards': {'id': 'organism_cards', 'label': 'Organism Cards', 'type': 'section_card', 'claim_boundary': 'UI section proxy only.'}, 'intervention_cards': {'id': 'intervention_cards', 'label': 'Intervention Cards', 'type': 'section_card', 'claim_boundary': 'UI section proxy only.'}, 'igg_opsonization_proxy': {'id': 'igg_opsonization_proxy', 'label': 'Igg Opsonization Proxy', 'type': 'compat_card', 'claim_boundary': 'Legacy test compatibility card only.'}}\n\n======================================================================\nFAIL: test_legacy_schema_and_nested_shape_markers (test_preset_card_shape_004s.PresetLegacyShape004STests.test_legacy_schema_and_nested_shape_markers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\tests\\test_preset_card_shape_004s.py\", line 17, in test_legacy_schema_and_nested_shape_markers\n    self.assertIn(\"drug\", preset[\"cards\"][\"ampicillin_like_proxy\"])\nAssertionError: 'drug' not found in {'id': 'ampicillin_like_proxy', 'label': 'Ampicillin-like', 'type': 'intervention_card', 'claim_boundary': 'Educational proxy card. Use as a mechanism/class cue only, not as a calibrated susceptibility result.', 'dataset_source': 'FDA / NCBI context', 'class_': 'beta-lactam', 'target': 'cell wall synthesis', 'mode': 'susceptible-cell suppression proxy', 'class': 'beta-lactam', 'applies_to': ['ecoli_k12_proxy', 'salmonella_enterica_proxy', 'bacillus_subtilis_168_proxy', 'enterococcus_faecalis_proxy']}\n\n----------------------------------------------------------------------\nRan 37 tests in 0.424s\n\nFAILED (failures=2, errors=2)\n"
+    }
+  ]
+}

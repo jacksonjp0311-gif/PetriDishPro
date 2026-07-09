@@ -1,0 +1,141 @@
+{
+  "active_wound": "particle_state_datetime_import_bug_blocks_artifact_generation",
+  "certified_by_004m": [
+    "GATE_01_RESUME_FROM_004L",
+    "GATE_02_BACKUP_INTENDED_FILES",
+    "GATE_03_PATCH_PYTHON_PARTICLE_STATE_MODULE"
+  ],
+  "claim_boundary": "004N fixes particle-state artifact generation and renderer access. It does not elevate scientific claim level.",
+  "finished_utc": "2026-07-09T00:39:02.750612+00:00",
+  "gates": [
+    {
+      "duration_ms": 0,
+      "evidence": {
+        "required_surfaces": "visible",
+        "resume_from": "004M_GATE_03"
+      },
+      "gate": "GATE_01_RESUME_FROM_004M_GATE_03",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 8,
+      "evidence": {
+        "backup_dir": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_004n_20260708_203900",
+        "copied": [
+          "petri_lab/particle_state.py",
+          "electron/main.js",
+          "electron/preload.js",
+          "electron/renderer/app.js",
+          "electron/renderer/index.html",
+          "README.md",
+          "ROADMAP.md"
+        ]
+      },
+      "gate": "GATE_02_BACKUP_INTENDED_FILES",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 1,
+      "evidence": {
+        "datetime_fix": "dt.datetime.now(dt.timezone.utc)",
+        "patched": "petri_lab/particle_state.py"
+      },
+      "gate": "GATE_04A_PATCH_PARTICLE_STATE_DATETIME",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 130,
+      "evidence": {
+        "particle_state_latest": "reports/bio/petri_particle_state_latest.json",
+        "payload": {
+          "claim_boundary": "Deterministic simulated spatial state. Not microscopy evidence, clinical evidence, species identification, treatment guidance, or biosafety evidence.",
+          "counts": {
+            "cells": 225,
+            "interactions": 9,
+            "particles": 320
+          },
+          "files": {
+            "cells": "cells.json",
+            "fields": "fields.json",
+            "interactions": "interactions.json",
+            "particles": "particles.json"
+          },
+          "generated_utc": "2026-07-09T00:39:01.015697Z",
+          "run_dir": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\artifacts\\bio\\runs\\petri_20260709_002041",
+          "run_id": "petri_20260709_002041",
+          "schema": "PETRI_PARTICLE_STATE.v0.4m",
+          "seed": 2276975934,
+          "selected_default": [
+            "ecoli_k12_proxy",
+            "bacillus_subtilis_proxy",
+            "saccharomyces_cerevisiae_proxy",
+            "acanthamoeba_castellanii_proxy"
+          ]
+        },
+        "stdout_tail": "{\"run_dir\": \"C:\\\\Users\\\\jacks\\\\OneDrive\\\\Desktop\\\\PetriDishPro\\\\artifacts\\\\bio\\\\runs\\\\petri_20260709_002041\", \"run_id\": \"petri_20260709_002041\", \"state\": {\"claim_boundary\": \"Deterministic simulated spatial state. Not microscopy evidence, clinical evidence, species identification, treatment guidance, or biosafety evidence.\", \"counts\": {\"cells\": 225, \"interactions\": 9, \"particles\": 320}, \"files\": {\"cells\": \"cells.json\", \"fields\": \"fields.json\", \"interactions\": \"interactions.json\", \"particles\": \"particles.json\"}, \"generated_utc\": \"2026-07-09T00:39:01.015697Z\", \"run_id\": \"petri_20260709_002041\", \"schema\": \"PETRI_PARTICLE_STATE.v0.4m\", \"seed\": 2276975934, \"selected_default\": [\"ecoli_k12_proxy\", \"bacillus_subtilis_proxy\", \"saccharomyces_cerevisiae_proxy\", \"acanthamoeba_castellanii_proxy\"]}}\n"
+      },
+      "gate": "GATE_04B_GENERATE_PARTICLE_ARTIFACTS",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 3,
+      "evidence": {
+        "patched": [
+          "electron/main.js",
+          "electron/preload.js",
+          "electron/renderer/app.js",
+          "electron/renderer/index.html"
+        ]
+      },
+      "gate": "GATE_05_PATCH_ELECTRON_PARTICLE_ARTIFACT_ACCESS",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 20,
+      "evidence": {
+        "doc": "docs/updates/PETRI_004N_PARTICLE_STATE_DATETIME_SEAL.md",
+        "test": "tests/test_particle_state_004n.py"
+      },
+      "gate": "GATE_06_PATCH_TESTS_AND_DOCS",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 1674,
+      "evidence": {
+        "compile": "pass",
+        "demo": "pass",
+        "particle_regenerate": "pass",
+        "particle_tail": "{\"run_dir\": \"C:\\\\Users\\\\jacks\\\\OneDrive\\\\Desktop\\\\PetriDishPro\\\\artifacts\\\\bio\\\\runs\\\\petri_20260709_003902\", \"run_id\": \"petri_20260709_003902\", \"state\": {\"claim_boundary\": \"Deterministic simulated spatial state. Not microscopy evidence, clinical evidence, species identification, treatment guidance, or biosafety evidence.\", \"counts\": {\"cells\": 225, \"interactions\": 9, \"particles\": 320}, \"files\": {\"cells\": \"cells.json\", \"fields\": \"fields.json\", \"interactions\": \"interactions.json\", \"particles\": \"particles.json\"}, \"generated_utc\": \"2026-07-09T00:39:02.711475Z\", \"run_id\": \"petri_20260709_003902\", \"schema\": \"PETRI_PARTICLE_STATE.v0.4m\", \"seed\": 3896541153, \"selected_default\": [\"ecoli_k12_proxy\", \"bacillus_subtilis_proxy\", \"saccharomyces_cerevisiae_proxy\", \"acanthamoeba_castellanii_proxy\"]}}\n",
+        "test_tail": "",
+        "tests": "pass"
+      },
+      "gate": "GATE_07_COMPILE_UNITTEST_DEMO_AND_REGENERATE",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 1,
+      "evidence": {
+        "latest": "reports/bio/petri_particle_state_latest.json",
+        "static_particle_state_contract": "pass"
+      },
+      "gate": "GATE_08_STATIC_PARTICLE_STATE_WOUND_CHECK",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 0,
+      "evidence": {
+        "commit": false,
+        "push": false,
+        "status": "skipped"
+      },
+      "gate": "GATE_09_OPTIONAL_INTENDED_FILES_GIT_SEAL",
+      "status": "pass"
+    }
+  ],
+  "mode": "resume_from_004m_gate_03",
+  "repo": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro",
+  "stage_policy": "intended_files_only",
+  "started_utc": "2026-07-09T00:39:00.893963+00:00",
+  "status": "sealed",
+  "system": "PETRI_DISH_PRO_004N_PARTICLE_STATE_DATETIME_SEAL"
+}

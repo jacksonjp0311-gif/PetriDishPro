@@ -1,0 +1,72 @@
+:root {
+  --bg: #03060c;
+  --panel: rgba(9, 18, 32, 0.82);
+  --panel2: rgba(12, 30, 52, 0.72);
+  --cyan: #00f0ff;
+  --blue: #1677ff;
+  --pink: #ff2bd6;
+  --gold: #ffaa00;
+  --green: #59ff6b;
+  --text: #eaf7ff;
+  --muted: #8da8bd;
+  --border: rgba(96, 210, 255, 0.22);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--text); font-family: Inter, Segoe UI, system-ui, sans-serif; overflow: hidden; }
+body::before {
+  content: "";
+  position: fixed; inset: 0;
+  background: radial-gradient(circle at 18% 12%, rgba(0,240,255,.22), transparent 28%), radial-gradient(circle at 72% 8%, rgba(22,119,255,.18), transparent 30%), radial-gradient(circle at 60% 86%, rgba(255,43,214,.14), transparent 24%), linear-gradient(180deg, #03060c, #050b15 55%, #02040a);
+  pointer-events: none;
+}
+.shell { position: relative; z-index: 1; height: 100vh; display: flex; flex-direction: column; padding: 16px; gap: 14px; }
+.topbar { height: 84px; flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 14px 16px; border: 1px solid var(--border); background: linear-gradient(135deg, rgba(10,20,36,.94), rgba(6,11,20,.78)); border-radius: 22px; box-shadow: 0 0 40px rgba(0,240,255,.08); }
+.brand { display: flex; align-items: center; gap: 14px; min-width: 300px; }
+.orb { width: 46px; height: 46px; border-radius: 50%; background: radial-gradient(circle, #fff 0 8%, var(--cyan) 12% 33%, var(--blue) 55%, transparent 70%); box-shadow: 0 0 30px var(--cyan), inset 0 0 16px #fff; }
+h1, h2, p { margin: 0; }
+h1 { font-size: 22px; letter-spacing: .08em; text-transform: uppercase; }
+.brand p, .panel-title p { color: var(--muted); font-size: 12px; margin-top: 4px; }
+.controls { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+.controls label { color: var(--muted); font-size: 12px; display: flex; align-items: center; gap: 6px; }
+select, input, button { background: rgba(5, 12, 22, .86); color: var(--text); border: 1px solid rgba(0,240,255,.28); border-radius: 12px; padding: 9px 10px; outline: none; }
+input[type="number"] { width: 76px; }
+button { cursor: pointer; font-weight: 700; letter-spacing: .03em; }
+button:hover, select:hover, input:hover { border-color: rgba(0,240,255,.72); box-shadow: 0 0 18px rgba(0,240,255,.12); }
+#runBtn { background: linear-gradient(135deg, rgba(0,240,255,.28), rgba(22,119,255,.28)); }
+.gateStrip { flex: 0 0 auto; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; min-height: 42px; padding: 10px 14px; border: 1px solid rgba(0,240,255,.20); border-radius: 18px; background: linear-gradient(90deg, rgba(0,240,255,.10), rgba(22,119,255,.08), rgba(255,43,214,.07)); color: #72f7ff; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 12px; letter-spacing: .05em; box-shadow: inset 0 1px 0 rgba(255,255,255,.06); }
+.gateStrip b { color: #eaf7ff; font-weight: 800; }
+.gateQuote { margin-left: auto; color: var(--muted); }
+.layout { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: 1fr 470px; gap: 14px; }
+.panel { border: 1px solid var(--border); border-radius: 22px; background: var(--panel); box-shadow: 0 16px 50px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.06); backdrop-filter: blur(18px); }
+.microscope { display: flex; flex-direction: column; min-width: 0; min-height: 0; padding: 14px; }
+.panel-title { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 0 2px 12px; }
+.panel-title h2, .side h2 { font-size: 14px; text-transform: uppercase; letter-spacing: .12em; color: #bfefff; }
+.zoomControls { display: flex; align-items: center; gap: 8px; }
+.zoomControls input { width: 170px; }
+.canvasWrap { position: relative; flex: 1 1 auto; min-height: 0; border-radius: 18px; overflow: hidden; border: 1px solid rgba(255,255,255,.08); background: radial-gradient(circle at center, rgba(16,37,61,.72), rgba(1,5,12,.96)); cursor: grab; }
+.canvasWrap:active { cursor: grabbing; }
+#densityCanvas { width: 100%; height: 100%; display: block; image-rendering: pixelated; }
+.reticle { pointer-events: none; position: absolute; left: 50%; top: 50%; width: 120px; height: 120px; transform: translate(-50%, -50%); border: 1px solid rgba(0,240,255,.28); border-radius: 50%; box-shadow: 0 0 28px rgba(0,240,255,.12); }
+.reticle::before, .reticle::after { content:""; position:absolute; background: rgba(0,240,255,.28); }
+.reticle::before { width: 160px; height: 1px; left: -20px; top: 59px; }
+.reticle::after { height: 160px; width: 1px; left: 59px; top: -20px; }
+.legend { display:flex; gap: 10px; flex-wrap: wrap; padding-top: 12px; }
+.legendItem { display:flex; align-items:center; gap:6px; font-size: 12px; color: var(--muted); }
+.swatch { width: 10px; height: 10px; border-radius: 50%; box-shadow: 0 0 10px currentColor; }
+.side { min-height: 0; display: grid; grid-template-rows: 250px 200px 1fr; gap: 14px; }
+.side .panel { padding: 14px; min-height: 0; overflow: hidden; }
+#curveCanvas { width: 100%; height: calc(100% - 26px); margin-top: 8px; }
+.fieldGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 12px; }
+.fieldBtn.active { background: rgba(0,240,255,.18); border-color: var(--cyan); }
+.metrics { margin-top: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px; color: var(--muted); }
+.metric { padding: 8px; border-radius: 12px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.06); }
+.metric b { display:block; color: var(--text); font-size: 13px; margin-top: 2px; }
+.summaryPanel pre { white-space: pre-wrap; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; color: #b9cde0; font-size: 12px; line-height: 1.42; overflow: auto; height: calc(100% - 28px); margin: 10px 0 0; }
+@media (max-width: 1200px) {
+  .layout { grid-template-columns: 1fr; overflow: auto; }
+  body { overflow: auto; }
+  .shell { height: auto; min-height: 100vh; }
+  .microscope { min-height: 720px; }
+  .side { grid-template-rows: 250px 200px 360px; }
+}

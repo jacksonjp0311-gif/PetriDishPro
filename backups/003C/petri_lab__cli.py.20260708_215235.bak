@@ -1,0 +1,16 @@
+from __future__ import annotations
+import argparse, json
+from pathlib import Path
+from .presets import list_presets
+from .simulation import run_experiment
+
+def main(argv=None):
+    p=argparse.ArgumentParser(description="Petri Dish Pro organism simulation lane")
+    p.add_argument("--root", default="."); p.add_argument("--preset", default="microbial_competition"); p.add_argument("--steps", type=int, default=90); p.add_argument("--grid", type=int, default=56); p.add_argument("--seed", type=int, default=None); p.add_argument("--list-presets", action="store_true"); p.add_argument("--json", action="store_true")
+    a=p.parse_args(argv)
+    if a.list_presets: print(json.dumps({"presets": list_presets()}, indent=2)); return 0
+    r=run_experiment(Path(a.root), a.preset, a.steps, a.grid, a.seed)
+    packet={"status":r["validation"]["status"],"run_id":r["run_id"],"preset":r["preset"],"dominant_organism":r["dominant_organism"],"metrics":r["metrics"],"receipt":"reports/bio/petri_run_latest.json","summary":"reports/bio/petri_summary_latest.md","claim_boundary":r["claim_boundary"]}
+    print(json.dumps(packet, indent=2, sort_keys=True) if a.json else f"{packet['status'].upper()} {packet['run_id']} dominant={packet['dominant_organism']}")
+    return 0 if r["validation"]["status"] == "pass" else 2
+if __name__ == "__main__": raise SystemExit(main())

@@ -1,0 +1,349 @@
+{
+  "machine": {
+    "system": "PETRI_DISH_PRO_005L_LEGACY_SHAPE_REFLECTION_SEAL",
+    "mode": "resume_from_005k_shape_failure",
+    "repo": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro",
+    "started_utc": "2026-07-09T12:32:14.765587+00:00",
+    "active_wound": "Strict tests still failing after shape reflection. Digest: reports/bio/failure_digest_latest.md\n..E.......................E.F........\n======================================================================\nERROR: test_preset_and_metric_cards_exist (test_card_stack_real_data_ui_004p.CardStackRealDataUI004PTests.test_preset_and_metric_cards_exist)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\tests\\test_card_stack_real_data_ui_004p.py\", line 23, in test_preset_and_metric_cards_exist\n    ids = {m[\"id\"] for m in metrics[\"cards\"]}\n                            ~~~~~~~^^^^^^^^^\nKeyError: 'cards'\n\n======================================================================\nERROR: test_004o_schema_and_004p_content_version_coexist (test_preset_card_shape_004r.PresetCardShape004RTests.test_004o_schema_and_004p_content_version_coexist)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\tests\\test_preset_card_shape_004r.py\", line 15, in test_004o_schema_and_004p_content_version_coexist\n    self.assertEqual(preset[\"content_version\"], \"004P\")\n                     ~~~~~~^^^^^^^^^^^^^^^^^^^\nKeyError: 'content_version'\n\n======================================================================\nFAIL: test_legacy_schema_and_nested_shape_markers (test_preset_card_shape_004s.PresetLegacyShape",
+    "stage_policy": "intended_registry_files_only",
+    "claim_boundary": "005L adds compatibility shape markers only. No wet-lab, diagnostic, treatment, biosafety, susceptibility, affinity, or species-ID claim is added.",
+    "reflected_contract": {
+      "card_members": {
+        "ampicillin_like_proxy": [
+          "drug"
+        ],
+        "neutralizing_antibody_proxy": [
+          "antibody"
+        ]
+      },
+      "card_field_equals": {},
+      "top_cards": [
+        "ampicillin_like_proxy",
+        "igg_opsonization_proxy",
+        "neutralizing_antibody_proxy"
+      ],
+      "top_metrics": [
+        "dominance_index",
+        "kill_curve_proxy",
+        "shannon_diversity",
+        "total_cells"
+      ],
+      "preset_sections": {
+        "antibiotic_selection": [
+          "metric_cards"
+        ]
+      },
+      "preset_interventions": {}
+    },
+    "finished_utc": "2026-07-09T12:32:20.746679+00:00",
+    "status": "failed",
+    "gates": [
+      {
+        "gate": "GATE_01_RESUME_FROM_005K_SHAPE_FAILURE",
+        "status": "pass",
+        "duration_ms": 0,
+        "evidence": {
+          "resume_from": "005K_GATE_06",
+          "failure_digest_exists": true,
+          "exact_visible_wound": "cards.ampicillin_like_proxy missing key 'drug'"
+        }
+      },
+      {
+        "gate": "GATE_02_BACKUP_INTENDED_FILES",
+        "status": "pass",
+        "duration_ms": 29,
+        "evidence": {
+          "backup_dir": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_005l_20260709_083214",
+          "copied": [
+            "README.md",
+            "ROADMAP.md",
+            "config/bio/intervention_card_registry.json",
+            "config/bio/metric_card_registry.json",
+            "config/bio/metric_cards.json",
+            "config/bio/preset_card_registry.json",
+            "config/bio/preset_cards.json",
+            "config/drug_card_registry.json",
+            "config/intervention_card_registry.json",
+            "config/intervention_cards.json",
+            "config/metric_card_registry.json",
+            "config/metric_cards.json",
+            "config/preset_card_registry.json",
+            "config/preset_cards.json"
+          ]
+        }
+      },
+      {
+        "gate": "GATE_03_REFLECT_TESTS_AND_PATCH_SHAPES",
+        "status": "pass",
+        "duration_ms": 105,
+        "evidence": {
+          "reflections": {
+            "card_members": {
+              "ampicillin_like_proxy": [
+                "drug"
+              ],
+              "neutralizing_antibody_proxy": [
+                "antibody"
+              ]
+            },
+            "card_field_equals": {},
+            "top_cards": [
+              "ampicillin_like_proxy",
+              "igg_opsonization_proxy",
+              "neutralizing_antibody_proxy"
+            ],
+            "top_metrics": [
+              "dominance_index",
+              "kill_curve_proxy",
+              "shannon_diversity",
+              "total_cells"
+            ],
+            "preset_sections": {
+              "antibiotic_selection": [
+                "metric_cards"
+              ]
+            },
+            "preset_interventions": {}
+          },
+          "preset": [
+            {
+              "path": "config/bio/preset_card_registry.json",
+              "cards": 31,
+              "presets": 11
+            },
+            {
+              "path": "config/preset_card_registry.json",
+              "cards": 26,
+              "presets": 6
+            },
+            {
+              "path": "config/preset_cards.json",
+              "cards": 31,
+              "presets": 11
+            },
+            {
+              "path": "config/bio/preset_cards.json",
+              "cards": 26,
+              "presets": 6
+            }
+          ],
+          "metric": [
+            {
+              "path": "config/bio/metric_card_registry.json",
+              "metrics": 19
+            },
+            {
+              "path": "config/metric_card_registry.json",
+              "metrics": 19
+            },
+            {
+              "path": "config/metric_cards.json",
+              "metrics": 19
+            },
+            {
+              "path": "config/bio/metric_cards.json",
+              "metrics": 19
+            }
+          ],
+          "intervention": [
+            {
+              "path": "config/bio/intervention_card_registry.json",
+              "cards": 17
+            },
+            {
+              "path": "config/intervention_card_registry.json",
+              "cards": 17
+            },
+            {
+              "path": "config/intervention_cards.json",
+              "cards": 17
+            },
+            {
+              "path": "config/drug_card_registry.json",
+              "cards": 17
+            }
+          ]
+        }
+      },
+      {
+        "gate": "GATE_04_STATIC_SHAPE_CONTRACT",
+        "status": "pass",
+        "duration_ms": 69,
+        "evidence": {
+          "preset_files": [
+            "config/bio/preset_card_registry.json",
+            "config/preset_card_registry.json",
+            "config/preset_cards.json",
+            "config/bio/preset_cards.json"
+          ],
+          "metric_files": [
+            "config/bio/metric_card_registry.json",
+            "config/metric_card_registry.json",
+            "config/metric_cards.json",
+            "config/bio/metric_cards.json"
+          ]
+        }
+      },
+      {
+        "gate": "GATE_05_STRICT_TESTS_WITH_SHAPE_REFLECTION",
+        "status": "fail",
+        "duration_ms": 5773,
+        "error": "Strict tests still failing after shape reflection. Digest: reports/bio/failure_digest_latest.md\n..E.......................E.F........\n======================================================================\nERROR: test_preset_and_metric_cards_exist (test_card_stack_real_data_ui_004p.CardStackRealDataUI004PTests.test_preset_and_metric_cards_exist)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\tests\\test_card_stack_real_data_ui_004p.py\", line 23, in test_preset_and_metric_cards_exist\n    ids = {m[\"id\"] for m in metrics[\"cards\"]}\n                            ~~~~~~~^^^^^^^^^\nKeyError: 'cards'\n\n======================================================================\nERROR: test_004o_schema_and_004p_content_version_coexist (test_preset_card_shape_004r.PresetCardShape004RTests.test_004o_schema_and_004p_content_version_coexist)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\tests\\test_preset_card_shape_004r.py\", line 15, in test_004o_schema_and_004p_content_version_coexist\n    self.assertEqual(preset[\"content_version\"], \"004P\")\n                     ~~~~~~^^^^^^^^^^^^^^^^^^^\nKeyError: 'content_version'\n\n======================================================================\nFAIL: test_legacy_schema_and_nested_shape_markers (test_preset_card_shape_004s.PresetLegacyShape004STests.test_legacy_schema_and_nested_shape_markers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\tests\\test_preset_card_shape_004s.py\", line 19, in test_legacy_schema_and_nested_shape_markers\n    self.assertIn(\"sparkline\", metric[\"metrics\"][\"total_cells\"])\nAssertionError: 'sparkline' not found in {'label': 'Total Cells', 'chart': 'sparkline', 'description': 'Total cell count over time.'}\n\n----------------------------------------------------------------------\nRan 37 tests in 0.427s\n\nFAILED (failures=1, errors=2)\n"
+      }
+    ]
+  },
+  "gates": [
+    {
+      "gate": "GATE_01_RESUME_FROM_005K_SHAPE_FAILURE",
+      "status": "pass",
+      "duration_ms": 0,
+      "evidence": {
+        "resume_from": "005K_GATE_06",
+        "failure_digest_exists": true,
+        "exact_visible_wound": "cards.ampicillin_like_proxy missing key 'drug'"
+      }
+    },
+    {
+      "gate": "GATE_02_BACKUP_INTENDED_FILES",
+      "status": "pass",
+      "duration_ms": 29,
+      "evidence": {
+        "backup_dir": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_005l_20260709_083214",
+        "copied": [
+          "README.md",
+          "ROADMAP.md",
+          "config/bio/intervention_card_registry.json",
+          "config/bio/metric_card_registry.json",
+          "config/bio/metric_cards.json",
+          "config/bio/preset_card_registry.json",
+          "config/bio/preset_cards.json",
+          "config/drug_card_registry.json",
+          "config/intervention_card_registry.json",
+          "config/intervention_cards.json",
+          "config/metric_card_registry.json",
+          "config/metric_cards.json",
+          "config/preset_card_registry.json",
+          "config/preset_cards.json"
+        ]
+      }
+    },
+    {
+      "gate": "GATE_03_REFLECT_TESTS_AND_PATCH_SHAPES",
+      "status": "pass",
+      "duration_ms": 105,
+      "evidence": {
+        "reflections": {
+          "card_members": {
+            "ampicillin_like_proxy": [
+              "drug"
+            ],
+            "neutralizing_antibody_proxy": [
+              "antibody"
+            ]
+          },
+          "card_field_equals": {},
+          "top_cards": [
+            "ampicillin_like_proxy",
+            "igg_opsonization_proxy",
+            "neutralizing_antibody_proxy"
+          ],
+          "top_metrics": [
+            "dominance_index",
+            "kill_curve_proxy",
+            "shannon_diversity",
+            "total_cells"
+          ],
+          "preset_sections": {
+            "antibiotic_selection": [
+              "metric_cards"
+            ]
+          },
+          "preset_interventions": {}
+        },
+        "preset": [
+          {
+            "path": "config/bio/preset_card_registry.json",
+            "cards": 31,
+            "presets": 11
+          },
+          {
+            "path": "config/preset_card_registry.json",
+            "cards": 26,
+            "presets": 6
+          },
+          {
+            "path": "config/preset_cards.json",
+            "cards": 31,
+            "presets": 11
+          },
+          {
+            "path": "config/bio/preset_cards.json",
+            "cards": 26,
+            "presets": 6
+          }
+        ],
+        "metric": [
+          {
+            "path": "config/bio/metric_card_registry.json",
+            "metrics": 19
+          },
+          {
+            "path": "config/metric_card_registry.json",
+            "metrics": 19
+          },
+          {
+            "path": "config/metric_cards.json",
+            "metrics": 19
+          },
+          {
+            "path": "config/bio/metric_cards.json",
+            "metrics": 19
+          }
+        ],
+        "intervention": [
+          {
+            "path": "config/bio/intervention_card_registry.json",
+            "cards": 17
+          },
+          {
+            "path": "config/intervention_card_registry.json",
+            "cards": 17
+          },
+          {
+            "path": "config/intervention_cards.json",
+            "cards": 17
+          },
+          {
+            "path": "config/drug_card_registry.json",
+            "cards": 17
+          }
+        ]
+      }
+    },
+    {
+      "gate": "GATE_04_STATIC_SHAPE_CONTRACT",
+      "status": "pass",
+      "duration_ms": 69,
+      "evidence": {
+        "preset_files": [
+          "config/bio/preset_card_registry.json",
+          "config/preset_card_registry.json",
+          "config/preset_cards.json",
+          "config/bio/preset_cards.json"
+        ],
+        "metric_files": [
+          "config/bio/metric_card_registry.json",
+          "config/metric_card_registry.json",
+          "config/metric_cards.json",
+          "config/bio/metric_cards.json"
+        ]
+      }
+    },
+    {
+      "gate": "GATE_05_STRICT_TESTS_WITH_SHAPE_REFLECTION",
+      "status": "fail",
+      "duration_ms": 5773,
+      "error": "Strict tests still failing after shape reflection. Digest: reports/bio/failure_digest_latest.md\n..E.......................E.F........\n======================================================================\nERROR: test_preset_and_metric_cards_exist (test_card_stack_real_data_ui_004p.CardStackRealDataUI004PTests.test_preset_and_metric_cards_exist)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\tests\\test_card_stack_real_data_ui_004p.py\", line 23, in test_preset_and_metric_cards_exist\n    ids = {m[\"id\"] for m in metrics[\"cards\"]}\n                            ~~~~~~~^^^^^^^^^\nKeyError: 'cards'\n\n======================================================================\nERROR: test_004o_schema_and_004p_content_version_coexist (test_preset_card_shape_004r.PresetCardShape004RTests.test_004o_schema_and_004p_content_version_coexist)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\tests\\test_preset_card_shape_004r.py\", line 15, in test_004o_schema_and_004p_content_version_coexist\n    self.assertEqual(preset[\"content_version\"], \"004P\")\n                     ~~~~~~^^^^^^^^^^^^^^^^^^^\nKeyError: 'content_version'\n\n======================================================================\nFAIL: test_legacy_schema_and_nested_shape_markers (test_preset_card_shape_004s.PresetLegacyShape004STests.test_legacy_schema_and_nested_shape_markers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\tests\\test_preset_card_shape_004s.py\", line 19, in test_legacy_schema_and_nested_shape_markers\n    self.assertIn(\"sparkline\", metric[\"metrics\"][\"total_cells\"])\nAssertionError: 'sparkline' not found in {'label': 'Total Cells', 'chart': 'sparkline', 'description': 'Total cell count over time.'}\n\n----------------------------------------------------------------------\nRan 37 tests in 0.427s\n\nFAILED (failures=1, errors=2)\n"
+    }
+  ]
+}

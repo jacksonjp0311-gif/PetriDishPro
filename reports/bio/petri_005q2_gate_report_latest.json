@@ -1,0 +1,137 @@
+{
+  "machine": {
+    "system": "PETRI_DISH_PRO_005Q2_TEST_HARNESS_SEAL",
+    "mode": "resume_from_005q_gate_06",
+    "repo": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro",
+    "started_utc": "2026-07-09T13:28:59.862091+00:00",
+    "active_wound": "005Q applied recovery successfully through static contract, but PowerShell treated unittest stderr dots as NativeCommandError.",
+    "stage_policy": "test_harness_only_plus_static_recovery_verify",
+    "claim_boundary": "005Q2 changes the test harness/docs only. No wet-lab, diagnostic, treatment, dosing, susceptibility, affinity, species-ID, clinical, or biosafety claim is added.",
+    "finished_utc": "2026-07-09T13:29:00.509121+00:00",
+    "status": "sealed",
+    "gates": [
+      {
+        "gate": "GATE_01_RESUME_FROM_005Q_GATE_06",
+        "status": "pass",
+        "duration_ms": 1,
+        "evidence": {
+          "resume_from": "005Q_GATE_06_STATIC_RECOVERY_CONTRACT",
+          "note": "005Q mutation already applied; this seals harness failure"
+        }
+      },
+      {
+        "gate": "GATE_02_BACKUP_INTENDED_FILES",
+        "status": "pass",
+        "duration_ms": 10,
+        "evidence": {
+          "backup_dir": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_005q2_20260709_092859",
+          "copied": [
+            "electron/renderer/index.html",
+            "electron/renderer/styles.css",
+            "electron/renderer/drugInjectionSafeRecovery005Q.js",
+            "README.md",
+            "ROADMAP.md"
+          ]
+        }
+      },
+      {
+        "gate": "GATE_03_STATIC_RECOVERY_CONTRACT",
+        "status": "pass",
+        "duration_ms": 1,
+        "evidence": {
+          "contract": "005Q recovery surface is intact"
+        }
+      },
+      {
+        "gate": "GATE_04_STRICT_TESTS_SAFE_CAPTURE",
+        "status": "pass",
+        "duration_ms": 603,
+        "evidence": {
+          "tests": "passed",
+          "stdout": "reports/bio/unit_stdout_005q2.txt",
+          "stderr": "reports/bio/unit_stderr_005q2.txt"
+        }
+      },
+      {
+        "gate": "GATE_05_DOCS",
+        "status": "pass",
+        "duration_ms": 30,
+        "evidence": {
+          "doc": "docs/updates/PETRI_005Q2_TEST_HARNESS_SEAL.md"
+        }
+      },
+      {
+        "gate": "GATE_06_OPTIONAL_GIT",
+        "status": "pass",
+        "duration_ms": 0,
+        "evidence": {
+          "commit": false,
+          "push": false,
+          "status": "skipped"
+        }
+      }
+    ]
+  },
+  "gates": [
+    {
+      "gate": "GATE_01_RESUME_FROM_005Q_GATE_06",
+      "status": "pass",
+      "duration_ms": 1,
+      "evidence": {
+        "resume_from": "005Q_GATE_06_STATIC_RECOVERY_CONTRACT",
+        "note": "005Q mutation already applied; this seals harness failure"
+      }
+    },
+    {
+      "gate": "GATE_02_BACKUP_INTENDED_FILES",
+      "status": "pass",
+      "duration_ms": 10,
+      "evidence": {
+        "backup_dir": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_005q2_20260709_092859",
+        "copied": [
+          "electron/renderer/index.html",
+          "electron/renderer/styles.css",
+          "electron/renderer/drugInjectionSafeRecovery005Q.js",
+          "README.md",
+          "ROADMAP.md"
+        ]
+      }
+    },
+    {
+      "gate": "GATE_03_STATIC_RECOVERY_CONTRACT",
+      "status": "pass",
+      "duration_ms": 1,
+      "evidence": {
+        "contract": "005Q recovery surface is intact"
+      }
+    },
+    {
+      "gate": "GATE_04_STRICT_TESTS_SAFE_CAPTURE",
+      "status": "pass",
+      "duration_ms": 603,
+      "evidence": {
+        "tests": "passed",
+        "stdout": "reports/bio/unit_stdout_005q2.txt",
+        "stderr": "reports/bio/unit_stderr_005q2.txt"
+      }
+    },
+    {
+      "gate": "GATE_05_DOCS",
+      "status": "pass",
+      "duration_ms": 30,
+      "evidence": {
+        "doc": "docs/updates/PETRI_005Q2_TEST_HARNESS_SEAL.md"
+      }
+    },
+    {
+      "gate": "GATE_06_OPTIONAL_GIT",
+      "status": "pass",
+      "duration_ms": 0,
+      "evidence": {
+        "commit": false,
+        "push": false,
+        "status": "skipped"
+      }
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "gates": [
+    {
+      "duration_ms": 0,
+      "evidence": {
+        "required_surfaces": "visible",
+        "resume_from": "004P_GATE_07"
+      },
+      "gate": "GATE_01_RESUME_FROM_004P_GATE_07",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 5,
+      "evidence": {
+        "backup_dir": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_004q_20260708_212947",
+        "copied": [
+          "config/preset_cards.json",
+          "config/metric_cards.json",
+          "README.md",
+          "ROADMAP.md"
+        ]
+      },
+      "gate": "GATE_02_BACKUP_INTENDED_FILES",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 5,
+      "evidence": {
+        "metric_schema_after": "PETRI_METRIC_CARD_REGISTRY.v0.4o",
+        "metric_schema_before": "PETRI_METRIC_CARDS.v0.4p",
+        "preset_schema_after": "PETRI_PRESET_CARD_REGISTRY.v0.4o",
+        "preset_schema_before": "PETRI_PRESET_CARDS.v0.4p"
+      },
+      "gate": "GATE_08A_PATCH_SCHEMA_COMPATIBILITY",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 26,
+      "evidence": {
+        "doc": "docs/updates/PETRI_004Q_PRESET_SCHEMA_COMPATIBILITY_SEAL.md"
+      },
+      "gate": "GATE_08B_PATCH_DOCS",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 23,
+      "evidence": {
+        "schema_compatibility": "pass"
+      },
+      "gate": "GATE_08C_STATIC_SCHEMA_CHECK_FIRST",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 707,
+      "error": "C:\\Program Files\\Python312\\python.exe -m unittest discover -s tests failed with exit code 1\nSTDOUT:\n\nSTDERR:\n...........................EE....\n======================================================================\nERROR: test_metric_registry_has_chart_contract (test_preset_cards_004o.PresetCards004OTests.test_metric_registry_has_chart_contract)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\tests\\test_preset_cards_004o.py\", line 22, in test_metric_registry_has_chart_contract\n    self.assertIn(key, cfg['metrics'])\n                       ~~~^^^^^^^^^^^\nKeyError: 'metrics'\n\n======================================================================\nERROR: test_preset_card_registry_has_drug_and_antibody_presets (test_preset_cards_004o.PresetCards004OTests.test_preset_card_registry_has_drug_and_antibody_presets)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\tests\\test_preset_cards_004o.py\", line 14, in test_preset_card_registry_has_drug_and_antibody_presets\n    self.assertIn('ampicillin_like_proxy', cfg['cards'])\n                                           ~~~^^^^^^^^^\nKeyError: 'cards'\n\n----------------------------------------------------------------------\nRan 33 tests in 0.407s\n\nFAILED (errors=2)\n",
+      "gate": "GATE_08D_COMPILE_UNITTEST_DEMO",
+      "status": "fail"
+    }
+  ],
+  "machine": {
+    "active_wound": "C:\\Program Files\\Python312\\python.exe -m unittest discover -s tests failed with exit code 1\nSTDOUT:\n\nSTDERR:\n...........................EE....\n======================================================================\nERROR: test_metric_registry_has_chart_contract (test_preset_cards_004o.PresetCards004OTests.test_metric_registry_has_chart_contract)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\tests\\test_preset_cards_004o.py\", line 22, in test_metric_registry_has_chart_contract\n    self.assertIn(key, cfg['metrics'])\n                       ~~~^^^^^^^^^^^\nKeyError: 'metrics'\n\n==========",
+    "certified_by_004p": [
+      "GATE_01_RESUME_FROM_004O",
+      "GATE_02_BACKUP_INTENDED_FILES",
+      "GATE_03_PATCH_SOURCE_GATED_CONFIGS",
+      "GATE_04_PATCH_ELECTRON_CONFIG_BRIDGE",
+      "GATE_05_PATCH_UI_LAYOUT_AND_DASHBOARD_OVERRIDES",
+      "GATE_06_PATCH_ENTRY_CARD_MIRROR",
+      "GATE_07_PATCH_TESTS_AND_DOCS"
+    ],
+    "claim_boundary": "004Q is a schema compatibility seal. It preserves 004P card content but restores 004O registry schema names required by existing tests.",
+    "failed_gate": "GATE_08D_COMPILE_UNITTEST_DEMO",
+    "finished_utc": "2026-07-09T01:29:47.937859+00:00",
+    "gates": [
+      {
+        "duration_ms": 0,
+        "evidence": {
+          "required_surfaces": "visible",
+          "resume_from": "004P_GATE_07"
+        },
+        "gate": "GATE_01_RESUME_FROM_004P_GATE_07",
+        "status": "pass"
+      },
+      {
+        "duration_ms": 5,
+        "evidence": {
+          "backup_dir": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_004q_20260708_212947",
+          "copied": [
+            "config/preset_cards.json",
+            "config/metric_cards.json",
+            "README.md",
+            "ROADMAP.md"
+          ]
+        },
+        "gate": "GATE_02_BACKUP_INTENDED_FILES",
+        "status": "pass"
+      },
+      {
+        "duration_ms": 5,
+        "evidence": {
+          "metric_schema_after": "PETRI_METRIC_CARD_REGISTRY.v0.4o",
+          "metric_schema_before": "PETRI_METRIC_CARDS.v0.4p",
+          "preset_schema_after": "PETRI_PRESET_CARD_REGISTRY.v0.4o",
+          "preset_schema_before": "PETRI_PRESET_CARDS.v0.4p"
+        },
+        "gate": "GATE_08A_PATCH_SCHEMA_COMPATIBILITY",
+        "status": "pass"
+      },
+      {
+        "duration_ms": 26,
+        "evidence": {
+          "doc": "docs/updates/PETRI_004Q_PRESET_SCHEMA_COMPATIBILITY_SEAL.md"
+        },
+        "gate": "GATE_08B_PATCH_DOCS",
+        "status": "pass"
+      },
+      {
+        "duration_ms": 23,
+        "evidence": {
+          "schema_compatibility": "pass"
+        },
+        "gate": "GATE_08C_STATIC_SCHEMA_CHECK_FIRST",
+        "status": "pass"
+      },
+      {
+        "duration_ms": 707,
+        "error": "C:\\Program Files\\Python312\\python.exe -m unittest discover -s tests failed with exit code 1\nSTDOUT:\n\nSTDERR:\n...........................EE....\n======================================================================\nERROR: test_metric_registry_has_chart_contract (test_preset_cards_004o.PresetCards004OTests.test_metric_registry_has_chart_contract)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\tests\\test_preset_cards_004o.py\", line 22, in test_metric_registry_has_chart_contract\n    self.assertIn(key, cfg['metrics'])\n                       ~~~^^^^^^^^^^^\nKeyError: 'metrics'\n\n======================================================================\nERROR: test_preset_card_registry_has_drug_and_antibody_presets (test_preset_cards_004o.PresetCards004OTests.test_preset_card_registry_has_drug_and_antibody_presets)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\tests\\test_preset_cards_004o.py\", line 14, in test_preset_card_registry_has_drug_and_antibody_presets\n    self.assertIn('ampicillin_like_proxy', cfg['cards'])\n                                           ~~~^^^^^^^^^\nKeyError: 'cards'\n\n----------------------------------------------------------------------\nRan 33 tests in 0.407s\n\nFAILED (errors=2)\n",
+        "gate": "GATE_08D_COMPILE_UNITTEST_DEMO",
+        "status": "fail"
+      }
+    ],
+    "mode": "resume_from_004p_gate_07",
+    "repo": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro",
+    "stage_policy": "intended_files_only",
+    "started_utc": "2026-07-09T01:29:47.167414+00:00",
+    "status": "failed",
+    "system": "PETRI_DISH_PRO_004Q_PRESET_SCHEMA_COMPATIBILITY_SEAL"
+  }
+}

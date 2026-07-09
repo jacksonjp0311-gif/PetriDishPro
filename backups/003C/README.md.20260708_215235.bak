@@ -1,0 +1,37 @@
+# Petri Dish Pro
+
+Standalone organism simulation lab with a Python simulation core and an Electron microscope HUD.
+
+## Start
+
+```powershell
+cd C:\Users\jacks\OneDrive\Desktop\PetriDishPro
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\ORGANISM_GATE.ps1
+```
+
+Double-click: `START_ORGANISM_GATE.bat`
+
+## Direct Python
+
+```powershell
+python -m petri_lab.cli --root . --preset microbial_competition --steps 90 --grid 56 --json
+```
+
+## Electron
+
+```powershell
+cd electron
+npm install
+npm start
+```
+
+## Receipts
+
+- `reports/bio/petri_run_latest.json`
+- `reports/bio/petri_density_latest.json`
+- `reports/bio/petri_summary_latest.md`
+- `artifacts/bio/runs/<run_id>/`
+
+## Boundary
+
+Educational and research simulation only. Not clinical, diagnostic, wet-lab, treatment, biosafety, or regulatory evidence.

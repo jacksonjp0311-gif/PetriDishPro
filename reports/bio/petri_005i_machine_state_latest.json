@@ -1,0 +1,138 @@
+{
+  "system": "PETRI_DISH_PRO_005I_EXPANDED_SCIENCE_PRESETS_ENTRY_MIRROR",
+  "mode": "source_gated_registry_expansion",
+  "repo": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro",
+  "started_utc": "2026-07-09T10:59:10.862926+00:00",
+  "claim_boundary": "005I expands source-gated educational organism/preset cards and mirrors them at entry. It does not make wet-lab, diagnostic, treatment, biosafety, or species-ID claims.",
+  "provenance_basis": [
+    "EcoCyc / BioCyc",
+    "Saccharomyces Genome Database",
+    "FDA Bad Bug Book",
+    "NCBI Medical Microbiology / NCBI context resources"
+  ],
+  "registry_counts": {
+    "organisms": 17,
+    "interventions": 12,
+    "presets": 8,
+    "metrics": 11
+  },
+  "finished_utc": "2026-07-09T10:59:12.756377+00:00",
+  "status": "sealed",
+  "gates": [
+    {
+      "gate": "GATE_01_RESUME_FROM_005H",
+      "status": "pass",
+      "duration_ms": 0,
+      "evidence": {
+        "resume_from": "005H",
+        "missing_optional": []
+      }
+    },
+    {
+      "gate": "GATE_02_BACKUP_INTENDED_FILES",
+      "status": "pass",
+      "duration_ms": 5,
+      "evidence": {
+        "backup_dir": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_005i_20260709_065910",
+        "copied": [
+          "README.md",
+          "ROADMAP.md",
+          "ORGANISM_GATE.ps1"
+        ]
+      }
+    },
+    {
+      "gate": "GATE_03_WRITE_EXPANDED_REGISTRIES",
+      "status": "pass",
+      "duration_ms": 658,
+      "evidence": {
+        "organism_registry": [
+          "config/bio/organism_card_registry.json"
+        ],
+        "intervention_registry": [
+          "config/bio/intervention_card_registry.json"
+        ],
+        "metric_registry": [
+          "_backup/petri_004p_20260708_212749/config/metric_cards.json",
+          "_backup/petri_004q_20260708_212947/config/metric_cards.json",
+          "_backup/petri_004r_20260708_213521/config/metric_cards.json",
+          "_backup/petri_004s_20260708_214540/config/metric_cards.json",
+          "_backup/petri_004x_20260708_220205/config/metric_cards.json",
+          "_backup/petri_004y_20260708_220607/config/metric_cards.json",
+          "_backup/petri_004y_20260708_221251/config/metric_cards.json",
+          "config/bio/metric_card_registry.json",
+          "config/metric_cards.json"
+        ],
+        "preset_registry": [
+          "_backup/petri_004p_20260708_212749/config/preset_cards.json",
+          "_backup/petri_004q_20260708_212947/config/preset_cards.json",
+          "_backup/petri_004r_20260708_213521/config/preset_cards.json",
+          "_backup/petri_004s_20260708_214540/config/preset_cards.json",
+          "_backup/petri_004x_20260708_220205/config/preset_cards.json",
+          "_backup/petri_004y_20260708_220607/config/preset_cards.json",
+          "_backup/petri_004y_20260708_221251/config/preset_cards.json",
+          "config/bio/preset_card_registry.json",
+          "config/preset_cards.json"
+        ],
+        "source_index": [
+          "config/bio/source_index.json"
+        ]
+      }
+    },
+    {
+      "gate": "GATE_04_GENERATE_PRESET_CARD_MIRROR",
+      "status": "pass",
+      "duration_ms": 33,
+      "evidence": {
+        "txt": "reports/bio/preset_card_mirror.txt",
+        "md": "reports/bio/preset_card_mirror.md"
+      }
+    },
+    {
+      "gate": "GATE_05_PATCH_ENTRY_POINT_MIRROR",
+      "status": "pass",
+      "duration_ms": 2,
+      "evidence": {
+        "entry": "ORGANISM_GATE.ps1",
+        "status": "patched"
+      }
+    },
+    {
+      "gate": "GATE_06_STATIC_CONTRACT",
+      "status": "pass",
+      "duration_ms": 21,
+      "evidence": {
+        "organisms": 17,
+        "presets": 8,
+        "metrics": 11
+      }
+    },
+    {
+      "gate": "GATE_07_RUN_NONSTRICT_TEST_DIGEST",
+      "status": "pass",
+      "duration_ms": 1160,
+      "evidence": {
+        "digest_runner": "ran",
+        "exit_code": 0
+      }
+    },
+    {
+      "gate": "GATE_08_DOCS",
+      "status": "pass",
+      "duration_ms": 11,
+      "evidence": {
+        "doc": "docs/updates/PETRI_005I_EXPANDED_SCIENCE_PRESETS_ENTRY_MIRROR.md"
+      }
+    },
+    {
+      "gate": "GATE_09_OPTIONAL_GIT",
+      "status": "pass",
+      "duration_ms": 0,
+      "evidence": {
+        "commit": false,
+        "push": false,
+        "status": "skipped"
+      }
+    }
+  ]
+}

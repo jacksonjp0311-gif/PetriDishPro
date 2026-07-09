@@ -1,0 +1,85 @@
+{
+  "active_wound": "C:\\Program Files\\Python312\\python.exe -m unittest discover -s tests failed with exit code 1\nSTDOUT:\n\nSTDERR:\n: 'count'}, 'escape_fraction': {'chart': 'line', 'chart_contract': {'data_key': 'escape_fraction', 'type': 'line', 'unit': 'fraction'}, 'chart_type': 'line', 'claim_boundary': 'Simulation metric only; not clinical or wet-lab evidence.', 'data_key': 'escape_fraction', 'description': 'Fraction escaping antibody/immune pressure proxy.', 'enabled': True, 'evidence_status': 'source_slot_unbound', 'id': 'escape_fraction', 'kind': 'metric', 'label': 'Escape Fraction', 'line': True, 'metric': True, 'name': 'Escape Fraction', 'series_key': 'escape_fraction', 'source_gated': True, 'summary': 'Fraction escaping antibody/immune pressure proxy.', 'title': 'Escape Fraction', 'type': 'metric', 'unit': 'fraction'}, 'ic50_proxy': {'chart': 'threshold', 'chart_contract': {'data_key': 'ic50_proxy', ",
+  "certified_by_004r": [
+    "GATE_01_RESUME_FROM_004Q_GATE_08C",
+    "GATE_02_BACKUP_INTENDED_FILES",
+    "GATE_08E_PATCH_REGISTRY_SHAPE_COMPATIBILITY",
+    "GATE_08F_STATIC_SHAPE_CHECK_FIRST",
+    "GATE_08G_PATCH_TESTS_AND_DOCS"
+  ],
+  "claim_boundary": "004S is a registry compatibility seal. It does not add clinical, treatment, wet-lab, diagnostic, species-ID, or biosafety claims.",
+  "failed_gate": "GATE_08L_COMPILE_UNITTEST_DEMO",
+  "finished_utc": "2026-07-09T01:45:41.800813+00:00",
+  "gates": [
+    {
+      "duration_ms": 0,
+      "evidence": {
+        "required_surfaces": "visible",
+        "resume_from": "004R_GATE_08G"
+      },
+      "gate": "GATE_01_RESUME_FROM_004R_GATE_08G",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 5,
+      "evidence": {
+        "backup_dir": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_004s_20260708_214540",
+        "copied": [
+          "config/preset_cards.json",
+          "config/metric_cards.json",
+          "README.md",
+          "ROADMAP.md"
+        ]
+      },
+      "gate": "GATE_02_BACKUP_INTENDED_FILES",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 6,
+      "evidence": {
+        "cards": 8,
+        "metrics": 12,
+        "test_requirements": {
+          "nested_card_fields": {},
+          "nested_metric_fields": {},
+          "top_level_cards": [
+            "ampicillin_like_proxy",
+            "igg_opsonization_proxy"
+          ],
+          "top_level_metrics": []
+        }
+      },
+      "gate": "GATE_08I_PATCH_LEGACY_NESTED_SHAPE_CONTRACT",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 24,
+      "evidence": {
+        "static_shape_contract": "pass"
+      },
+      "gate": "GATE_08J_STATIC_SHAPE_CHECK_FIRST",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 25,
+      "evidence": {
+        "doc": "docs/updates/PETRI_004S_PRESET_LEGACY_SHAPE_AUTO_SEAL.md",
+        "test": "tests/test_preset_card_shape_004s.py"
+      },
+      "gate": "GATE_08K_PATCH_DOCS_AND_TESTS",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 796,
+      "error": "C:\\Program Files\\Python312\\python.exe -m unittest discover -s tests failed with exit code 1\nSTDOUT:\n\nSTDERR:\n: 'count'}, 'escape_fraction': {'chart': 'line', 'chart_contract': {'data_key': 'escape_fraction', 'type': 'line', 'unit': 'fraction'}, 'chart_type': 'line', 'claim_boundary': 'Simulation metric only; not clinical or wet-lab evidence.', 'data_key': 'escape_fraction', 'description': 'Fraction escaping antibody/immune pressure proxy.', 'enabled': True, 'evidence_status': 'source_slot_unbound', 'id': 'escape_fraction', 'kind': 'metric', 'label': 'Escape Fraction', 'line': True, 'metric': True, 'name': 'Escape Fraction', 'series_key': 'escape_fraction', 'source_gated': True, 'summary': 'Fraction escaping antibody/immune pressure proxy.', 'title': 'Escape Fraction', 'type': 'metric', 'unit': 'fraction'}, 'ic50_proxy': {'chart': 'threshold', 'chart_contract': {'data_key': 'ic50_proxy', 'type': 'threshold', 'unit': 'proxy'}, 'chart_type': 'threshold', 'claim_boundary': 'Simulation metric only; not clinical or wet-lab evidence.', 'data_key': 'ic50_proxy', 'description': 'Exploratory IC50-style metric requiring assay provenance.', 'enabled': True, 'evidence_status': 'source_slot_unbound', 'id': 'ic50_proxy', 'kind': 'metric', 'label': 'IC50 Proxy', 'metric': True, 'name': 'IC50 Proxy', 'series_key': 'ic50_proxy', 'source_gated': True, 'summary': 'Exploratory IC50-style metric requiring assay provenance.', 'threshold': True, 'title': 'IC50 Proxy', 'type': 'metric', 'unit': 'proxy'}, 'kill_curve': {'chart': 'line', 'chart_contract': {'data_key': 'kill_curve', 'type': 'line', 'unit': 'fraction'}, 'chart_type': 'line', 'claim_boundary': 'Simulation metric only; not clinical or wet-lab evidence.', 'data_key': 'kill_curve', 'description': 'Survival fraction under drug-pressure proxy.', 'enabled': True, 'evidence_status': 'source_slot_unbound', 'id': 'kill_curve', 'kind': 'metric', 'label': 'Kill Curve', 'line': True, 'metric': True, 'name': 'Kill Curve', 'series_key': 'kill_curve', 'source_gated': True, 'summary': 'Survival fraction under drug-pressure proxy.', 'title': 'Kill Curve', 'type': 'metric', 'unit': 'fraction'}, 'mic_proxy': {'chart': 'threshold', 'chart_contract': {'data_key': 'mic_proxy', 'type': 'threshold', 'unit': 'proxy'}, 'chart_type': 'threshold', 'claim_boundary': 'Simulation metric only; not clinical or wet-lab evidence.', 'data_key': 'mic_proxy', 'description': 'Exploratory minimum inhibitory concentration-style card; requires real AST data before claims.', 'enabled': True, 'evidence_status': 'source_slot_unbound', 'id': 'mic_proxy', 'kind': 'metric', 'label': 'MIC Proxy', 'metric': True, 'name': 'MIC Proxy', 'series_key': 'mic_proxy', 'source_gated': True, 'summary': 'Exploratory minimum inhibitory concentration-style metric requiring AST provenance.', 'threshold': True, 'title': 'MIC Proxy', 'type': 'metric', 'unit': 'proxy'}, 'resistant_fraction': {'chart': 'line', 'chart_contract': {'data_key': 'resistant_fraction', 'type': 'line', 'unit': 'fraction'}, 'chart_type': 'line', 'claim_boundary': 'Simulation metric only; not clinical or wet-lab evidence.', 'data_key': 'resistant_fraction', 'description': 'Fraction of cells assigned resistant phenotype/proxy.', 'enabled': True, 'evidence_status': 'source_slot_unbound', 'id': 'resistant_fraction', 'kind': 'metric', 'label': 'Resistant Fraction', 'line': True, 'metric': True, 'name': 'Resistant Fraction', 'series_key': 'resistant_fraction', 'source_gated': True, 'summary': 'Fraction of cells assigned resistant phenotype/proxy.', 'title': 'Resistant Fraction', 'type': 'metric', 'unit': 'fraction'}, 'shannon_diversity': {'area': True, 'chart': 'area', 'chart_contract': {'data_key': 'shannon_diversity', 'type': 'area', 'unit': 'index'}, 'chart_type': 'area', 'claim_boundary': 'Simulation metric only; not clinical or wet-lab evidence.', 'data_key': 'shannon_diversity', 'description': 'Population evenness across selected organisms.', 'enabled': True, 'evidence_status': 'source_slot_unbound', 'id': 'shannon_diversity', 'kind': 'metric', 'label': 'Shannon Diversity', 'metric': True, 'name': 'Shannon Diversity', 'series_key': 'shannon_diversity', 'source_gated': True, 'summary': 'Population evenness across selected organisms.', 'title': 'Shannon Diversity', 'type': 'metric', 'unit': 'index'}, 'total_cells': {'chart': 'sparkline', 'chart_contract': {'data_key': 'total_cells', 'type': 'sparkline', 'unit': 'count'}, 'chart_type': 'sparkline', 'claim_boundary': 'Simulation metric only; not clinical or wet-lab evidence.', 'data_key': 'total_cells', 'description': 'Selected organism cell count over time.', 'enabled': True, 'evidence_status': 'source_slot_unbound', 'id': 'total_cells', 'kind': 'metric', 'label': 'Total Cells', 'metric': True, 'name': 'Total Cells', 'series_key': 'total_cells', 'source_gated': True, 'sparkline': True, 'summary': 'Selected organism cell count over time.', 'title': 'Total Cells', 'type': 'metric', 'unit': 'count'}}\n\n----------------------------------------------------------------------\nRan 36 tests in 0.451s\n\nFAILED (failures=1, errors=1)\n",
+      "gate": "GATE_08L_COMPILE_UNITTEST_DEMO",
+      "status": "fail"
+    }
+  ],
+  "mode": "resume_from_004r_gate_08g",
+  "repo": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro",
+  "stage_policy": "intended_files_only",
+  "started_utc": "2026-07-09T01:45:40.939230+00:00",
+  "status": "failed",
+  "system": "PETRI_DISH_PRO_004S_PRESET_LEGACY_SHAPE_AUTO_SEAL"
+}

@@ -1,0 +1,140 @@
+{
+  "gates": [
+    {
+      "duration_ms": 1,
+      "evidence": {
+        "required_surfaces": "visible",
+        "resume_from": "004G"
+      },
+      "gate": "GATE_01_RESUME_FROM_004G",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 11,
+      "evidence": {
+        "backup_dir": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_004h_20260708_184952",
+        "copied": [
+          "electron/renderer/index.html",
+          "electron/renderer/app.js",
+          "electron/renderer/styles.css",
+          "electron/renderer/organism_cell_overlay.js",
+          "README.md",
+          "ROADMAP.md"
+        ]
+      },
+      "gate": "GATE_02_BACKUP_INTENDED_UI",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 2,
+      "evidence": {
+        "patched": [
+          "electron/renderer/index.html",
+          "electron/renderer/styles.css",
+          "electron/renderer/app.js",
+          "electron/renderer/organism_cell_overlay.js"
+        ]
+      },
+      "gate": "GATE_03_PATCH_COMPACT_LIVE_MICROSCOPE_UI",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 24,
+      "evidence": {
+        "doc": "docs/updates/PETRI_004H_COMPACT_LIVE_MICROSCOPE_DESIGN.md",
+        "test": "tests/test_live_microscope_design_004h.py"
+      },
+      "gate": "GATE_04_PATCH_TESTS_AND_DOCS",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 766,
+      "error": "C:\\Program Files\\Python312\\python.exe -m unittest discover -s tests failed with exit code 1\nSTDOUT:\n\nSTDERR:\nres = await window.petri.run({ preset:$(\"preset\").value, steps:$(\"steps\").value, grid:$(\"grid\").value });\\n    if(res.code !== 0){ $(\"statusBox\").textContent = `Run failed: ${res.stderr || res.stdout || \"unknown\"}`; return; }\\n    latest = res.latest || res.result || {};\\n    try { runs = await window.petri.listRuns(); } catch {}\\n    rebuildParticles();\\n    renderStaticPanels();\\n    $(\"statusBox\").textContent = `Run complete: ${normalizeRun(latest).run_id}`;\\n  } finally {\\n    $(\"runBtn\").disabled = false;\\n  }\\n}\\nfunction exportState() {\\n  const blob = new Blob([JSON.stringify({ version:\"004H\", time:t, view:activeView, run:normalizeRun(latest), controls:{ zoom:val(\"zoom\"), cellDensity:val(\"cellDensity\"), flow:val(\"flow\") } }, null, 2)], { type:\"application/json\" });\\n  const a=document.createElement(\"a\"); a.href=URL.createObjectURL(blob); a.download=\"petri-live-microscope-state.json\"; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),1000);\\n}\\nfunction installEvents() {\\n  [\"zoom\",\"cellDensity\",\"cellScale\",\"flow\",\"fieldOpacity\",\"fieldSelect\",\"gridOverlay\",\"trackingToggle\"].forEach(id => $(id).addEventListener(\"input\",()=>{syncControls(); if(id===\"cellDensity\")rebuildParticles(); renderStaticPanels();}));\\n  document.querySelectorAll(\"[data-view]\").forEach(btn=>btn.addEventListener(\"click\",()=>{document.querySelectorAll(\"[data-view]\").forEach(b=>b.classList.remove(\"active\"));btn.classList.add(\"active\");activeView=btn.dataset.view;}));\\n  $(\"runBtn\").addEventListener(\"click\",runSimulation);\\n  $(\"reloadBtn\").addEventListener(\"click\",loadAll);\\n  $(\"artifactBtn\").addEventListener(\"click\",()=>window.petri.openArtifacts());\\n  $(\"pauseBtn\").addEventListener(\"click\",()=>{paused=!paused;$(\"pauseBtn\").innerHTML=paused?\"\u00e2\u2013\u00b6<b>Run</b>\":\"\u00e2\u2026\u00a1<b>Pause</b>\";});\\n  $(\"resetViewBtn\").addEventListener(\"click\",()=>{pan={x:0,y:0};$(\"zoom\").value=\"1.15\";syncControls();});\\n  $(\"stateBtn\").addEventListener(\"click\",exportState);\\n  $(\"captureBtn\").addEventListener(\"click\",()=>{const a=document.createElement(\"a\");a.href=$(\"scopeCanvas\").toDataURL(\"image/png\");a.download=\"organism-gate-capture.png\";a.click();});\\n  const canvas=$(\"scopeCanvas\");\\n  canvas.addEventListener(\"wheel\",e=>{e.preventDefault();$(\"zoom\").value=clamp(val(\"zoom\",1)+(e.deltaY<0?.08:-.08),.65,3.25).toFixed(2);syncControls();},{passive:false});\\n  canvas.addEventListener(\"pointerdown\",e=>{drag={x:e.clientX,y:e.clientY,pan:{...pan}};canvas.setPointerCapture(e.pointerId);});\\n  canvas.addEventListener(\"pointermove\",e=>{if(!drag)return;pan.x=drag.pan.x+(e.clientX-drag.x);pan.y=drag.pan.y+(e.clientY-drag.y);});\\n  canvas.addEventListener(\"pointerup\",()=>{drag=null;});\\n  window.addEventListener(\"resize\",()=>{drawScope();drawCurves();drawDensity();});\\n}\\ndocument.addEventListener(\"DOMContentLoaded\",()=>{installEvents();syncControls();loadAll();requestAnimationFrame(loop);});\\n'\n\n----------------------------------------------------------------------\nRan 17 tests in 0.484s\n\nFAILED (failures=1)\n",
+      "gate": "GATE_05_COMPILE_UNITTEST_DEMO",
+      "status": "fail"
+    }
+  ],
+  "machine": {
+    "active_wound": "C:\\Program Files\\Python312\\python.exe -m unittest discover -s tests failed with exit code 1\nSTDOUT:\n\nSTDERR:\nres = await window.petri.run({ preset:$(\"preset\").value, steps:$(\"steps\").value, grid:$(\"grid\").value });\\n    if(res.code !== 0){ $(\"statusBox\").textContent = `Run failed: ${res.stderr || res.stdout || \"unknown\"}`; return; }\\n    latest = res.latest || res.result || {};\\n    try { runs = await window.petri.listRuns(); } catch {}\\n    rebuildParticles();\\n    renderStaticPanels();\\n    $(",
+    "active_wounds": [
+      "topbar_text_too_heavy",
+      "microscope_animation_not_primary",
+      "design_not_using_supplied_live_microscope_concept",
+      "capture_action_should_not_gate_animation",
+      "operator_surface_needs_compact_config_driven_science_layout"
+    ],
+    "certified_by_004g": [
+      "GATE_01_RESUME_FROM_004F_GATE_08",
+      "GATE_02_BACKUP_APP_SURFACE",
+      "GATE_09A_PATCH_NORMALIZE_DOMINANT_MARKER",
+      "GATE_09B_STATIC_CONTRACT_CHECK_FIRST",
+      "GATE_09C_COMPILEALL_AND_UNITTEST_ONLY",
+      "GATE_10_RUN_DEMO_AND_EMIT_RECEIPTS",
+      "GATE_11_OPTIONAL_INTENDED_FILES_GIT_SEAL"
+    ],
+    "claim_boundary": "004H is a UI/animation design refinement. It does not change the scientific validity, biological kernel, or claim level.",
+    "failed_gate": "GATE_05_COMPILE_UNITTEST_DEMO",
+    "finished_utc": "2026-07-08T22:49:53.281871+00:00",
+    "gates": [
+      {
+        "duration_ms": 1,
+        "evidence": {
+          "required_surfaces": "visible",
+          "resume_from": "004G"
+        },
+        "gate": "GATE_01_RESUME_FROM_004G",
+        "status": "pass"
+      },
+      {
+        "duration_ms": 11,
+        "evidence": {
+          "backup_dir": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_004h_20260708_184952",
+          "copied": [
+            "electron/renderer/index.html",
+            "electron/renderer/app.js",
+            "electron/renderer/styles.css",
+            "electron/renderer/organism_cell_overlay.js",
+            "README.md",
+            "ROADMAP.md"
+          ]
+        },
+        "gate": "GATE_02_BACKUP_INTENDED_UI",
+        "status": "pass"
+      },
+      {
+        "duration_ms": 2,
+        "evidence": {
+          "patched": [
+            "electron/renderer/index.html",
+            "electron/renderer/styles.css",
+            "electron/renderer/app.js",
+            "electron/renderer/organism_cell_overlay.js"
+          ]
+        },
+        "gate": "GATE_03_PATCH_COMPACT_LIVE_MICROSCOPE_UI",
+        "status": "pass"
+      },
+      {
+        "duration_ms": 24,
+        "evidence": {
+          "doc": "docs/updates/PETRI_004H_COMPACT_LIVE_MICROSCOPE_DESIGN.md",
+          "test": "tests/test_live_microscope_design_004h.py"
+        },
+        "gate": "GATE_04_PATCH_TESTS_AND_DOCS",
+        "status": "pass"
+      },
+      {
+        "duration_ms": 766,
+        "error": "C:\\Program Files\\Python312\\python.exe -m unittest discover -s tests failed with exit code 1\nSTDOUT:\n\nSTDERR:\nres = await window.petri.run({ preset:$(\"preset\").value, steps:$(\"steps\").value, grid:$(\"grid\").value });\\n    if(res.code !== 0){ $(\"statusBox\").textContent = `Run failed: ${res.stderr || res.stdout || \"unknown\"}`; return; }\\n    latest = res.latest || res.result || {};\\n    try { runs = await window.petri.listRuns(); } catch {}\\n    rebuildParticles();\\n    renderStaticPanels();\\n    $(\"statusBox\").textContent = `Run complete: ${normalizeRun(latest).run_id}`;\\n  } finally {\\n    $(\"runBtn\").disabled = false;\\n  }\\n}\\nfunction exportState() {\\n  const blob = new Blob([JSON.stringify({ version:\"004H\", time:t, view:activeView, run:normalizeRun(latest), controls:{ zoom:val(\"zoom\"), cellDensity:val(\"cellDensity\"), flow:val(\"flow\") } }, null, 2)], { type:\"application/json\" });\\n  const a=document.createElement(\"a\"); a.href=URL.createObjectURL(blob); a.download=\"petri-live-microscope-state.json\"; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),1000);\\n}\\nfunction installEvents() {\\n  [\"zoom\",\"cellDensity\",\"cellScale\",\"flow\",\"fieldOpacity\",\"fieldSelect\",\"gridOverlay\",\"trackingToggle\"].forEach(id => $(id).addEventListener(\"input\",()=>{syncControls(); if(id===\"cellDensity\")rebuildParticles(); renderStaticPanels();}));\\n  document.querySelectorAll(\"[data-view]\").forEach(btn=>btn.addEventListener(\"click\",()=>{document.querySelectorAll(\"[data-view]\").forEach(b=>b.classList.remove(\"active\"));btn.classList.add(\"active\");activeView=btn.dataset.view;}));\\n  $(\"runBtn\").addEventListener(\"click\",runSimulation);\\n  $(\"reloadBtn\").addEventListener(\"click\",loadAll);\\n  $(\"artifactBtn\").addEventListener(\"click\",()=>window.petri.openArtifacts());\\n  $(\"pauseBtn\").addEventListener(\"click\",()=>{paused=!paused;$(\"pauseBtn\").innerHTML=paused?\"\u00e2\u2013\u00b6<b>Run</b>\":\"\u00e2\u2026\u00a1<b>Pause</b>\";});\\n  $(\"resetViewBtn\").addEventListener(\"click\",()=>{pan={x:0,y:0};$(\"zoom\").value=\"1.15\";syncControls();});\\n  $(\"stateBtn\").addEventListener(\"click\",exportState);\\n  $(\"captureBtn\").addEventListener(\"click\",()=>{const a=document.createElement(\"a\");a.href=$(\"scopeCanvas\").toDataURL(\"image/png\");a.download=\"organism-gate-capture.png\";a.click();});\\n  const canvas=$(\"scopeCanvas\");\\n  canvas.addEventListener(\"wheel\",e=>{e.preventDefault();$(\"zoom\").value=clamp(val(\"zoom\",1)+(e.deltaY<0?.08:-.08),.65,3.25).toFixed(2);syncControls();},{passive:false});\\n  canvas.addEventListener(\"pointerdown\",e=>{drag={x:e.clientX,y:e.clientY,pan:{...pan}};canvas.setPointerCapture(e.pointerId);});\\n  canvas.addEventListener(\"pointermove\",e=>{if(!drag)return;pan.x=drag.pan.x+(e.clientX-drag.x);pan.y=drag.pan.y+(e.clientY-drag.y);});\\n  canvas.addEventListener(\"pointerup\",()=>{drag=null;});\\n  window.addEventListener(\"resize\",()=>{drawScope();drawCurves();drawDensity();});\\n}\\ndocument.addEventListener(\"DOMContentLoaded\",()=>{installEvents();syncControls();loadAll();requestAnimationFrame(loop);});\\n'\n\n----------------------------------------------------------------------\nRan 17 tests in 0.484s\n\nFAILED (failures=1)\n",
+        "gate": "GATE_05_COMPILE_UNITTEST_DEMO",
+        "status": "fail"
+      }
+    ],
+    "mode": "resume_from_004g",
+    "repo": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro",
+    "stage_policy": "intended_files_only",
+    "started_utc": "2026-07-08T22:49:52.475668+00:00",
+    "status": "failed",
+    "system": "PETRI_DISH_PRO_004H_COMPACT_LIVE_MICROSCOPE_DESIGN"
+  }
+}

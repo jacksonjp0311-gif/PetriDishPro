@@ -1,0 +1,13 @@
+{
+  "name": "petri-dish-pro-electron",
+  "version": "0.1.0",
+  "description": "Electron microscope cockpit for Petri Dish Pro.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "smoke": "electron . --smoke"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0"
+  }
+}

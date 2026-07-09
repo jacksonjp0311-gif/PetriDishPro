@@ -1,0 +1,94 @@
+{
+  "active_wound": "C:\\Program Files\\Python312\\python.exe -m unittest discover -s tests failed with exit code 1\nSTDOUT:\n\nSTDERR:\nton>\\n      <button id=\"artifactBtn\" class=\"secondary\">Open Artifacts</button>\\n\\n      <label>Microscope View</label>\\n      <select id=\"viewMode\">\\n        <option value=\"organisms\">Organisms + Field</option>\\n        <option value=\"morphology\">Organisms Only</option>\\n        <option value=\"field\">Field Only</option>\\n        <option value=\"raw\">Raw Matrix Debug</option>\\n      </selec",
+  "active_wounds": [
+    "dish_field_renders_as_square_overlay",
+    "organisms_not_morphologically_visible",
+    "ui_uses_no_science_config_contract",
+    "field_layer_overpowers_cell_layer",
+    "layout_scrollbars_break_operator_surface"
+  ],
+  "claim_boundary": "004C is an exploratory scientific-visualization refinement. It improves morphology-inspired rendering and configuration, not clinical, diagnostic, wet-lab, or biosafety validity.",
+  "failed_gate": "GATE_07_COMPILE_UNITTEST_DEMO",
+  "finished_utc": "2026-07-08T22:34:13.106690+00:00",
+  "gates": [
+    {
+      "duration_ms": 0,
+      "evidence": {
+        "repo": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro",
+        "required_surfaces": "visible"
+      },
+      "gate": "GATE_01_RESUME_FROM_004A",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 13,
+      "evidence": {
+        "backup_dir": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_004c_20260708_183412",
+        "copied": [
+          "electron/main.js",
+          "electron/preload.js",
+          "electron/renderer/index.html",
+          "electron/renderer/app.js",
+          "electron/renderer/styles.css",
+          "README.md",
+          "ROADMAP.md"
+        ]
+      },
+      "gate": "GATE_02_BACKUP_INTENDED_FILES",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 1,
+      "evidence": {
+        "config": "config/petri_science_config.v0.4c.json",
+        "organism_count": 5
+      },
+      "gate": "GATE_03_EMIT_SCIENCE_CONFIG",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 2,
+      "evidence": {
+        "patched": [
+          "electron/main.js",
+          "electron/preload.js"
+        ]
+      },
+      "gate": "GATE_04_PATCH_ELECTRON_MAIN_PRELOAD",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 1,
+      "evidence": {
+        "patched": [
+          "electron/renderer/index.html",
+          "electron/renderer/styles.css",
+          "electron/renderer/app.js"
+        ]
+      },
+      "gate": "GATE_05_PATCH_CONFIGURED_MICROSCOPE_RENDERER",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 23,
+      "evidence": {
+        "doc": "docs/updates/PETRI_004C_CONFIGURED_SCIENCE_MICROSCOPE.md",
+        "test": "tests/test_science_microscope_004c.py"
+      },
+      "gate": "GATE_06_PATCH_TESTS_AND_DOCS",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 807,
+      "error": "C:\\Program Files\\Python312\\python.exe -m unittest discover -s tests failed with exit code 1\nSTDOUT:\n\nSTDERR:\nton>\\n      <button id=\"artifactBtn\" class=\"secondary\">Open Artifacts</button>\\n\\n      <label>Microscope View</label>\\n      <select id=\"viewMode\">\\n        <option value=\"organisms\">Organisms + Field</option>\\n        <option value=\"morphology\">Organisms Only</option>\\n        <option value=\"field\">Field Only</option>\\n        <option value=\"raw\">Raw Matrix Debug</option>\\n      </select>\\n\\n      <label>Field</label>\\n      <select id=\"fieldSelect\">\\n        <option value=\"density\">Total Density</option>\\n        <option value=\"nutrient\">Nutrient</option>\\n        <option value=\"oxygen\">Oxygen</option>\\n        <option value=\"toxin\">Toxin / Antibiotic</option>\\n        <option value=\"waste\">Waste</option>\\n      </select>\\n\\n      <div class=\"slider-row\"><span>cell density</span><input id=\"cellDensity\" type=\"range\" min=\"0.25\" max=\"2.25\" step=\"0.05\" value=\"1.1\"></div>\\n      <div class=\"slider-row\"><span>cell scale</span><input id=\"cellScale\" type=\"range\" min=\"0.55\" max=\"1.8\" step=\"0.05\" value=\"1.0\"></div>\\n      <div class=\"slider-row\"><span>field opacity</span><input id=\"fieldOpacity\" type=\"range\" min=\"0\" max=\"0.85\" step=\"0.05\" value=\"0.30\"></div>\\n\\n      <label class=\"check\"><input id=\"gridOverlay\" type=\"checkbox\"> grid overlay</label>\\n      <label class=\"check\"><input id=\"halo\" type=\"checkbox\" checked> phase halo</label>\\n      <label class=\"check\"><input id=\"labels\" type=\"checkbox\" checked> organism labels</label>\\n\\n      <div class=\"status\" id=\"statusBox\">Ready. 004C config loaded.</div>\\n      <div class=\"boundary\">Exploratory simulation only. Not clinical, diagnostic, wet-lab, treatment, or biosafety evidence.</div>\\n    </aside>\\n\\n    <section class=\"panel microscope-panel\">\\n      <div class=\"panel-title\">\\n        <div>\\n          <h2 id=\"runTitle\">Latest Run</h2>\\n          <div id=\"runSub\" class=\"mono small\">loading...</div>\\n        </div>\\n        <div class=\"chips\" id=\"metricChips\"></div>\\n      </div>\\n      <div class=\"microscope-wrap\" id=\"microscopeWrap\">\\n        <canvas id=\"dishCanvas\"></canvas>\\n      </div>\\n      <div class=\"caption\">\\n        <span id=\"fieldCaption\">field-density</span>\\n        <span>organism morphology proxies // wheel=zoom // drag=pan // double-click=reset</span>\\n      </div>\\n    </section>\\n\\n    <aside class=\"panel inspector\">\\n      <h2>Population Curves</h2>\\n      <canvas id=\"curveCanvas\" class=\"curve\"></canvas>\\n      <div id=\"curveLegend\" class=\"legend\"></div>\\n\\n      <h2>Organism Cards</h2>\\n      <div id=\"organismCards\" class=\"cards\"></div>\\n\\n      <h2>Science Config</h2>\\n      <pre id=\"scienceConfig\" class=\"receipt small-pre\"></pre>\\n\\n      <h2>Run Archive</h2>\\n      <div id=\"runArchive\" class=\"archive\"></div>\\n\\n      <h2>Receipt</h2>\\n      <pre id=\"receipt\" class=\"receipt\"></pre>\\n    </aside>\\n  </main>\\n\\n  <script src=\"./app.js\"></script>\\n</body>\\n</html>\\n'\n\n----------------------------------------------------------------------\nRan 14 tests in 0.495s\n\nFAILED (failures=3)\n",
+      "gate": "GATE_07_COMPILE_UNITTEST_DEMO",
+      "status": "fail"
+    }
+  ],
+  "mode": "resume_from_004A_or_004B_visual_wound",
+  "repo": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro",
+  "stage_policy": "intended_files_only",
+  "started_utc": "2026-07-08T22:34:12.257014+00:00",
+  "status": "failed",
+  "system": "PETRI_DISH_PRO_004C_CONFIGURED_SCIENCE_MICROSCOPE"
+}

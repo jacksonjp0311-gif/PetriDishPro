@@ -1,0 +1,253 @@
+from __future__ import annotations
+
+import math
+from typing import Any
+
+try:
+    from .science_notes import CLAIM_BOUNDARY as _SCIENCE_CLAIM_BOUNDARY
+except Exception:
+    _SCIENCE_CLAIM_BOUNDARY = "Research and educational simulation only. Not diagnostic, not clinical, not wet-lab proof, and not a public-health forecast."
+
+CLAIM_BOUNDARY = _SCIENCE_CLAIM_BOUNDARY
+
+
+def _finite_number(value: Any) -> bool:
+    return isinstance(value, (int, float)) and math.isfinite(float(value))
+
+
+def _as_int(value: Any, default: int = 0) -> int:
+    try:
+        if isinstance(value, bool):
+            return default
+        if isinstance(value, (int, float, str)):
+            return int(float(value))
+    except Exception:
+        return default
+    return default
+
+
+def _grid_size_from_result(result: dict[str, Any], density: Any = None) -> int:
+    raw = result.get("grid", result.get("grid_size", result.get("size", 0)))
+    if isinstance(raw, dict):
+        candidates = []
+        for key in ("size", "n", "grid", "grid_size", "width", "height", "rows", "cols", "columns"):
+            if key in raw:
+                candidates.append(_as_int(raw.get(key), 0))
+        candidates = [x for x in candidates if x > 0]
+        if candidates:
+            return min(candidates)
+    scalar = _as_int(raw, 0)
+    if scalar > 0:
+        return scalar
+    if isinstance(density, list) and density:
+        return len(density)
+    metrics = result.get("metrics")
+    if isinstance(metrics, dict):
+        for key in ("grid", "grid_size", "size"):
+            scalar = _as_int(metrics.get(key), 0)
+            if scalar > 0:
+                return scalar
+    return 0
+
+
+def _steps_from_result(result: dict[str, Any]) -> int:
+    raw = result.get("steps", None)
+    steps = _as_int(raw, 0)
+    if steps > 0:
+        return steps
+    metrics = result.get("metrics")
+    if isinstance(metrics, dict):
+        steps = _as_int(metrics.get("steps", 0), 0)
+        if steps > 0:
+            return steps
+    curves = _curves_from_result(result)
+    if isinstance(curves, dict) and curves:
+        lengths = [len(v) for v in curves.values() if isinstance(v, list)]
+        if lengths:
+            return max(lengths)
+    return 0
+
+
+def _density_from_result(result: dict[str, Any]) -> Any:
+    fields = result.get("fields")
+    if isinstance(fields, dict) and "density" in fields:
+        return fields.get("density")
+    density = result.get("density")
+    if isinstance(density, dict):
+        if "normalized" in density:
+            return density.get("normalized")
+        if "raw" in density:
+            return density.get("raw")
+    return density
+
+
+def _curves_from_result(result: dict[str, Any]) -> Any:
+    curves = result.get("population_curves")
+    if isinstance(curves, dict):
+        return curves
+    curves = result.get("curves")
+    if isinstance(curves, dict):
+        return curves
+    if isinstance(curves, list):
+        converted: dict[str, list[float]] = {}
+        skip = {"step", "t", "time", "total_density", "nutrient_total", "toxin_total", "waste_total", "oxygen_total"}
+        for row in curves:
+            if isinstance(row, dict):
+                for key, value in row.items():
+                    if key in skip:
+                        continue
+                    if _finite_number(value):
+                        converted.setdefault(str(key), []).append(float(value))
+        if converted:
+            return converted
+    return curves
+
+
+def _organism_count(result: dict[str, Any]) -> int:
+    organisms = result.get("organisms")
+    if isinstance(organisms, list):
+        return len(organisms)
+    if isinstance(organisms, dict):
+        return len(organisms)
+    metrics = result.get("metrics")
+    if isinstance(metrics, dict):
+        count = _as_int(metrics.get("organism_count", 0), 0)
+        if count > 0:
+            return count
+    curves = _curves_from_result(result)
+    if isinstance(curves, dict):
+        return len(curves)
+    return 0
+
+
+def _final_total(result: dict[str, Any], curves: Any) -> float:
+    metrics = result.get("metrics")
+    if isinstance(metrics, dict):
+        value = metrics.get("final_total_population", metrics.get("final_population", None))
+        if _finite_number(value):
+            return float(value)
+    latest = result.get("population_latest")
+    if isinstance(latest, dict):
+        vals = [float(v) for v in latest.values() if _finite_number(v)]
+        if vals:
+            return sum(vals)
+    if isinstance(curves, dict):
+        total = 0.0
+        seen = False
+        for curve in curves.values():
+            if isinstance(curve, list) and curve:
+                value = curve[-1]
+                if _finite_number(value):
+                    total += float(value)
+                    seen = True
+        if seen:
+            return total
+    return 0.0
+
+
+def validate_run(result: dict[str, Any]) -> dict[str, Any]:
+    errors: list[str] = []
+    warnings: list[str] = []
+
+    if not isinstance(result, dict):
+        return {
+            "status": "fail",
+            "passed": False,
+            "errors": ["result is not a dictionary"],
+            "failures": ["result is not a dictionary"],
+            "warnings": [],
+            "claim_boundary": CLAIM_BOUNDARY,
+        }
+
+    density = _density_from_result(result)
+    grid = _grid_size_from_result(result, density)
+    steps = _steps_from_result(result)
+    curves = _curves_from_result(result)
+    organism_count = _organism_count(result)
+    final_total = _final_total(result, curves)
+
+    if grid <= 0:
+        errors.append("grid size could not be determined")
+    if 0 < grid < 16:
+        warnings.append("grid is below recommended microscope simulation size of 16")
+    if steps < 1:
+        errors.append("steps must be positive")
+    if organism_count <= 0:
+        errors.append("experiment has no organisms")
+    if not _finite_number(final_total):
+        errors.append("final population is not finite")
+    if _finite_number(final_total) and final_total < 0:
+        errors.append("final population is negative")
+
+    if not isinstance(curves, dict) or not curves:
+        errors.append("population curves missing")
+    if isinstance(curves, dict):
+        for name, curve in curves.items():
+            if not isinstance(curve, list) or not curve:
+                errors.append(f"population curve missing for {name}")
+            if isinstance(curve, list):
+                for value in curve:
+                    if (not _finite_number(value)) or float(value) < 0:
+                        errors.append(f"population curve has invalid values for {name}")
+                        break
+
+    if not isinstance(density, list) or not density:
+        errors.append("density field missing")
+    if isinstance(density, list) and density:
+        if grid > 0 and len(density) != grid:
+            warnings.append("density field row count differs from declared grid")
+        flat: list[float] = []
+        for row in density:
+            if isinstance(row, list):
+                for value in row:
+                    if _finite_number(value):
+                        flat.append(float(value))
+                    else:
+                        errors.append("density field contains non-numeric values")
+                        break
+        if not flat:
+            errors.append("density field empty")
+        if flat and max(flat) <= 0:
+            errors.append("density field contains no organisms")
+        if flat and any(value < 0 for value in flat):
+            errors.append("density field contains negative values")
+
+    claim = str(result.get("claim_boundary", CLAIM_BOUNDARY))
+    claim_lower = claim.lower()
+    if "diagnostic" not in claim_lower:
+        warnings.append("claim boundary should explicitly block diagnostic use")
+
+    status = "pass" if not errors else "fail"
+    return {
+        "status": status,
+        "passed": status == "pass",
+        "errors": errors,
+        "failures": list(errors),
+        "warnings": warnings,
+        "claim_boundary": CLAIM_BOUNDARY,
+        "permitted_use": [
+            "education",
+            "exploratory simulation",
+            "UI prototyping",
+            "architecture testing",
+        ],
+        "not_permitted_use": [
+            "clinical diagnosis",
+            "drug efficacy prediction",
+            "wet-lab proof",
+            "patient-specific recommendation",
+            "public-health forecast",
+        ],
+        "checks": {
+            "grid": grid,
+            "steps": steps,
+            "organism_count": organism_count,
+            "curve_count": len(curves) if isinstance(curves, dict) else 0,
+            "final_total_population": round(float(final_total), 6) if _finite_number(final_total) else None,
+        },
+    }
+
+
+def validate_result(result: dict[str, Any]) -> dict[str, Any]:
+    # Compatibility alias for pre-003C code and tests.
+    return validate_run(result)

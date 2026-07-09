@@ -1,0 +1,50 @@
+﻿{
+    "system":  "PETRI_DISH_PRO_005U_STABLE_MENUS_NO_PULSE",
+    "repo":  "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro",
+    "started_utc":  "2026-07-09T14:33:31.8118746Z",
+    "wound":  "005T rebuilt selector rows repeatedly, causing visual pulsing/flicker.",
+    "claim_boundary":  "005U is a UI stability repair only. No wet-lab, clinical, dosing, efficacy, susceptibility, diagnostic, or biosafety claim is created.",
+    "gates":  [
+                  {
+                      "status":  "pass",
+                      "gate":  "GATE_01_RESUME_FROM_005T"
+                  },
+                  {
+                      "gate":  "GATE_02_BACKUP_INTENDED_FILES",
+                      "backup":  "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_005u_20260709_103331",
+                      "status":  "pass"
+                  },
+                  {
+                      "status":  "pass",
+                      "gate":  "GATE_03_WRITE_STABLE_JS"
+                  },
+                  {
+                      "status":  "pass",
+                      "gate":  "GATE_04_APPEND_CSS"
+                  },
+                  {
+                      "status":  "pass",
+                      "gate":  "GATE_05_UNBIND_005T_BIND_005U_LAST"
+                  },
+                  {
+                      "status":  "pass",
+                      "gate":  "GATE_06_STATIC_CONTRACT"
+                  },
+                  {
+                      "status":  "pass",
+                      "gate":  "GATE_07_STRICT_UNIT_TESTS"
+                  },
+                  {
+                      "status":  "pass",
+                      "gate":  "GATE_08_DOCS"
+                  },
+                  {
+                      "commit":  false,
+                      "gate":  "GATE_09_OPTIONAL_GIT",
+                      "push":  false,
+                      "status":  "pass"
+                  }
+              ],
+    "status":  "sealed",
+    "finished_utc":  "2026-07-09T14:33:33.1535426Z"
+}

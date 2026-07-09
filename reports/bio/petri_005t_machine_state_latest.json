@@ -1,0 +1,50 @@
+﻿{
+    "system":  "PETRI_DISH_PRO_005T_CONTROL_SPACING_CARD_MENUS",
+    "repo":  "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro",
+    "started_utc":  "2026-07-09T14:25:00.5909674Z",
+    "wound":  "Small top-right button overlap remains; organism and drug card selection menus need aligned, explicit selectors.",
+    "claim_boundary":  "005T is a UI and selection-shell repair only. No wet-lab, clinical, dosing, efficacy, susceptibility, diagnostic, or biosafety claim is created.",
+    "gates":  [
+                  {
+                      "status":  "pass",
+                      "gate":  "GATE_01_RESUME_FROM_005S"
+                  },
+                  {
+                      "gate":  "GATE_02_BACKUP_INTENDED_FILES",
+                      "backup":  "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_005t_20260709_102500",
+                      "status":  "pass"
+                  },
+                  {
+                      "status":  "pass",
+                      "gate":  "GATE_03_WRITE_JS"
+                  },
+                  {
+                      "status":  "pass",
+                      "gate":  "GATE_04_APPEND_CSS"
+                  },
+                  {
+                      "status":  "pass",
+                      "gate":  "GATE_05_BIND_SCRIPT_LAST"
+                  },
+                  {
+                      "status":  "pass",
+                      "gate":  "GATE_06_STATIC_CONTRACT"
+                  },
+                  {
+                      "status":  "pass",
+                      "gate":  "GATE_07_STRICT_UNIT_TESTS"
+                  },
+                  {
+                      "status":  "pass",
+                      "gate":  "GATE_08_DOCS"
+                  },
+                  {
+                      "commit":  false,
+                      "gate":  "GATE_09_OPTIONAL_GIT",
+                      "push":  false,
+                      "status":  "pass"
+                  }
+              ],
+    "status":  "sealed",
+    "finished_utc":  "2026-07-09T14:25:01.8969015Z"
+}

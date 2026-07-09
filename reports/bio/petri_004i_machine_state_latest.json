@@ -1,0 +1,97 @@
+{
+  "active_wound": "004h_unit_tests_fail_one_static_renderer_marker_after_live_microscope_rewrite",
+  "certified_by_004h": [
+    "GATE_01_RESUME_FROM_004G",
+    "GATE_02_BACKUP_INTENDED_UI",
+    "GATE_03_PATCH_COMPACT_LIVE_MICROSCOPE_UI",
+    "GATE_04_PATCH_TESTS_AND_DOCS"
+  ],
+  "claim_boundary": "004I is a static compatibility seal over the 004H live microscope UI. It does not alter biology or scientific claim level.",
+  "finished_utc": "2026-07-08T22:54:10.604788+00:00",
+  "gates": [
+    {
+      "duration_ms": 0,
+      "evidence": {
+        "required_surfaces": "visible",
+        "resume_from": "004H_GATE_04"
+      },
+      "gate": "GATE_01_RESUME_FROM_004H_GATE_04",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 7,
+      "evidence": {
+        "backup_dir": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_004i_20260708_185409",
+        "copied": [
+          "electron/renderer/app.js",
+          "electron/renderer/index.html",
+          "electron/renderer/styles.css",
+          "electron/renderer/organism_cell_overlay.js",
+          "README.md",
+          "ROADMAP.md"
+        ]
+      },
+      "gate": "GATE_02_BACKUP_INTENDED_UI",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 3,
+      "evidence": {
+        "patched": [
+          "electron/renderer/app.js",
+          "electron/renderer/index.html",
+          "electron/renderer/styles.css",
+          "electron/renderer/organism_cell_overlay.js"
+        ]
+      },
+      "gate": "GATE_05A_PATCH_STATIC_RENDERER_MARKERS",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 23,
+      "evidence": {
+        "doc": "docs/updates/PETRI_004I_LIVE_MICROSCOPE_STATIC_SEAL.md",
+        "test": "tests/test_live_microscope_static_seal_004i.py"
+      },
+      "gate": "GATE_05B_PATCH_TESTS_AND_DOCS",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 47,
+      "evidence": {
+        "markers": 12,
+        "static_contract": "pass"
+      },
+      "gate": "GATE_05C_STATIC_CONTRACT_CHECK_FIRST",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 1433,
+      "evidence": {
+        "compile": "pass",
+        "demo": "pass",
+        "demo_tail": "_latest.json\",\n    \"latest_run\": \"C:\\\\Users\\\\jacks\\\\OneDrive\\\\Desktop\\\\PetriDishPro\\\\reports\\\\bio\\\\petri_run_latest.json\",\n    \"latest_summary\": \"C:\\\\Users\\\\jacks\\\\OneDrive\\\\Desktop\\\\PetriDishPro\\\\reports\\\\bio\\\\petri_summary_latest.md\"\n  },\n  \"claim_boundary\": \"Educational/research simulation only. Not diagnostic, clinical, wet-lab, or safety proof.\",\n  \"population_latest\": {\n    \"bacillus_like\": 10.718838,\n    \"ecoli_like\": 12.62009,\n    \"predator_microbe\": 2.146524,\n    \"yeast_like\": 8.582424\n  },\n  \"preset\": \"microbial_competition\",\n  \"run_id\": \"petri_20260708_225410\",\n  \"status\": \"pass\"\n}\n",
+        "test_tail": "",
+        "tests": "pass"
+      },
+      "gate": "GATE_05D_COMPILE_UNITTEST_DEMO",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 0,
+      "evidence": {
+        "commit": false,
+        "push": false,
+        "status": "skipped"
+      },
+      "gate": "GATE_06_OPTIONAL_INTENDED_FILES_GIT_SEAL",
+      "status": "pass"
+    }
+  ],
+  "mode": "resume_from_004h_gate_04",
+  "repo": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro",
+  "stage_policy": "intended_files_only",
+  "started_utc": "2026-07-08T22:54:09.087950+00:00",
+  "status": "sealed",
+  "system": "PETRI_DISH_PRO_004I_LIVE_MICROSCOPE_STATIC_SEAL"
+}

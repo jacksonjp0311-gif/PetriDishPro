@@ -1,0 +1,76 @@
+
+from __future__ import annotations
+
+from typing import Any
+
+
+def validate_run(result: dict[str, Any]) -> dict[str, Any]:
+    errors: list[str] = []
+    warnings: list[str] = []
+
+    if not isinstance(result, dict):
+        return {"status": "fail", "passed": False, "errors": ["result is not a dictionary"], "warnings": []}
+
+    grid = int(result.get("grid", 0) or 0)
+    steps = int(result.get("steps", 0) or 0)
+    if grid < 16:
+        errors.append("grid must be at least 16")
+    if steps < 1:
+        errors.append("steps must be positive")
+
+    organisms = result.get("organisms")
+    if not isinstance(organisms, list) or not organisms:
+        errors.append("organisms list missing")
+
+    curves = result.get("population_curves")
+    if not isinstance(curves, dict) or not curves:
+        errors.append("population_curves missing")
+    if isinstance(curves, dict):
+        for name, curve in curves.items():
+            if not isinstance(curve, list) or not curve:
+                errors.append(f"population curve missing for {name}")
+            if isinstance(curve, list) and any((not isinstance(x, (int, float))) or x < 0 for x in curve):
+                errors.append(f"population curve has invalid values for {name}")
+
+    fields = result.get("fields")
+    if not isinstance(fields, dict):
+        errors.append("fields missing")
+    if isinstance(fields, dict):
+        density = fields.get("density")
+        if not isinstance(density, list) or not density:
+            errors.append("density field missing")
+        if isinstance(density, list) and density:
+            if len(density) != grid:
+                warnings.append("density field row count differs from declared grid")
+            flat = []
+            for row in density:
+                if isinstance(row, list):
+                    flat.extend(row)
+            if not flat:
+                errors.append("density field empty")
+            if flat and max(flat) <= 0:
+                errors.append("density field contains no organisms")
+            if flat and any((not isinstance(x, (int, float))) or x < 0 for x in flat):
+                errors.append("density field contains invalid values")
+
+    claim = str(result.get("claim_boundary", ""))
+    if "Not diagnostic" not in claim and "not diagnostic" not in claim:
+        warnings.append("claim boundary should explicitly block diagnostic use")
+
+    return {
+        "status": "pass" if not errors else "fail",
+        "passed": not errors,
+        "errors": errors,
+        "warnings": warnings,
+        "checks": {
+            "grid": grid,
+            "steps": steps,
+            "organism_count": len(organisms) if isinstance(organisms, list) else 0,
+            "curve_count": len(curves) if isinstance(curves, dict) else 0,
+        },
+    }
+
+
+def validate_result(result: dict[str, Any]) -> dict[str, Any]:
+    """Compatibility alias for legacy tests/scripts created before v0.3.003C."""
+    return validate_run(result)

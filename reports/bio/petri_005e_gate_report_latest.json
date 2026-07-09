@@ -1,0 +1,183 @@
+﻿{
+    "machine":  {
+                    "system":  "PETRI_DISH_PRO_005E_BOTTOM_BINDING_PURGE_SEAL",
+                    "mode":  "resume_from_005D_gate_05",
+                    "repo":  "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro",
+                    "started_utc":  "2026-07-09T10:30:32.8027825Z",
+                    "active_wound":  "005D_regex_did_not_remove_all_old_bottom_script_bindings_from_index",
+                    "stage_policy":  "intended_files_only",
+                    "claim_boundary":  "005E changes Electron HTML script binding and UI ownership only.",
+                    "status":  "sealed",
+                    "finished_utc":  "2026-07-09T10:30:34.4613103Z",
+                    "gates":  [
+                                  {
+                                      "gate":  "GATE_01_RESUME_FROM_005D_GATE_05",
+                                      "status":  "pass",
+                                      "utc":  "2026-07-09T10:30:32.8268095Z",
+                                      "evidence":  {
+                                                       "styles":  "visible",
+                                                       "single_layer":  "visible",
+                                                       "index":  "visible"
+                                                   }
+                                  },
+                                  {
+                                      "gate":  "GATE_02_BACKUP_INTENDED_FILES",
+                                      "status":  "pass",
+                                      "utc":  "2026-07-09T10:30:32.8505866Z",
+                                      "evidence":  {
+                                                       "backup_dir":  "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_005e_20260709_063032",
+                                                       "copied":  [
+                                                                      "electron\\renderer\\index.html",
+                                                                      "electron\\renderer\\styles.css",
+                                                                      "README.md",
+                                                                      "ROADMAP.md"
+                                                                  ]
+                                                   }
+                                  },
+                                  {
+                                      "gate":  "GATE_03_PURGE_OLD_BOTTOM_BINDINGS",
+                                      "status":  "pass",
+                                      "utc":  "2026-07-09T10:30:32.8889007Z",
+                                      "evidence":  {
+                                                       "removed":  [
+                                                                       "bottomLayoutSeal.js",
+                                                                       "bottomNoScrollSeal.js",
+                                                                       "bottomDockVisibleSeal.js",
+                                                                       "bottomAuthoritativeOverlay.js"
+                                                                   ],
+                                                       "kept":  "bottomSingleLayerSeal.js"
+                                                   }
+                                  },
+                                  {
+                                      "gate":  "GATE_04_APPEND_HARD_HIDE_CSS",
+                                      "status":  "pass",
+                                      "utc":  "2026-07-09T10:30:32.8952937Z",
+                                      "evidence":  {
+                                                       "marker":  "PETRI 005E BOTTOM BINDING PURGE SEAL",
+                                                       "css":  "electron/renderer/styles.css"
+                                                   }
+                                  },
+                                  {
+                                      "gate":  "GATE_05_STATIC_SINGLE_BINDING_CONTRACT",
+                                      "status":  "pass",
+                                      "utc":  "2026-07-09T10:30:32.9332604Z",
+                                      "evidence":  {
+                                                       "contract":  "only bottomSingleLayerSeal.js remains bound"
+                                                   }
+                                  },
+                                  {
+                                      "gate":  "GATE_06_RUN_NONSTRICT_TEST_DIGEST",
+                                      "status":  "pass",
+                                      "utc":  "2026-07-09T10:30:34.4236575Z",
+                                      "evidence":  {
+                                                       "note":  "non-strict",
+                                                       "digest_runner":  "ran",
+                                                       "exit_code":  0
+                                                   }
+                                  },
+                                  {
+                                      "gate":  "GATE_07_PATCH_DOCS",
+                                      "status":  "pass",
+                                      "utc":  "2026-07-09T10:30:34.4547743Z",
+                                      "evidence":  {
+                                                       "doc":  "docs/updates/PETRI_005E_BOTTOM_BINDING_PURGE_SEAL.md"
+                                                   }
+                                  },
+                                  {
+                                      "gate":  "GATE_08_OPTIONAL_INTENDED_FILES_GIT_SEAL",
+                                      "status":  "pass",
+                                      "utc":  "2026-07-09T10:30:34.4592247Z",
+                                      "evidence":  {
+                                                       "status":  "skipped",
+                                                       "push":  false,
+                                                       "commit":  false
+                                                   }
+                                  }
+                              ]
+                },
+    "gates":  [
+                  {
+                      "gate":  "GATE_01_RESUME_FROM_005D_GATE_05",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T10:30:32.8268095Z",
+                      "evidence":  {
+                                       "styles":  "visible",
+                                       "single_layer":  "visible",
+                                       "index":  "visible"
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_02_BACKUP_INTENDED_FILES",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T10:30:32.8505866Z",
+                      "evidence":  {
+                                       "backup_dir":  "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_005e_20260709_063032",
+                                       "copied":  [
+                                                      "electron\\renderer\\index.html",
+                                                      "electron\\renderer\\styles.css",
+                                                      "README.md",
+                                                      "ROADMAP.md"
+                                                  ]
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_03_PURGE_OLD_BOTTOM_BINDINGS",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T10:30:32.8889007Z",
+                      "evidence":  {
+                                       "removed":  [
+                                                       "bottomLayoutSeal.js",
+                                                       "bottomNoScrollSeal.js",
+                                                       "bottomDockVisibleSeal.js",
+                                                       "bottomAuthoritativeOverlay.js"
+                                                   ],
+                                       "kept":  "bottomSingleLayerSeal.js"
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_04_APPEND_HARD_HIDE_CSS",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T10:30:32.8952937Z",
+                      "evidence":  {
+                                       "marker":  "PETRI 005E BOTTOM BINDING PURGE SEAL",
+                                       "css":  "electron/renderer/styles.css"
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_05_STATIC_SINGLE_BINDING_CONTRACT",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T10:30:32.9332604Z",
+                      "evidence":  {
+                                       "contract":  "only bottomSingleLayerSeal.js remains bound"
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_06_RUN_NONSTRICT_TEST_DIGEST",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T10:30:34.4236575Z",
+                      "evidence":  {
+                                       "note":  "non-strict",
+                                       "digest_runner":  "ran",
+                                       "exit_code":  0
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_07_PATCH_DOCS",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T10:30:34.4547743Z",
+                      "evidence":  {
+                                       "doc":  "docs/updates/PETRI_005E_BOTTOM_BINDING_PURGE_SEAL.md"
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_08_OPTIONAL_INTENDED_FILES_GIT_SEAL",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T10:30:34.4592247Z",
+                      "evidence":  {
+                                       "status":  "skipped",
+                                       "push":  false,
+                                       "commit":  false
+                                   }
+                  }
+              ]
+}

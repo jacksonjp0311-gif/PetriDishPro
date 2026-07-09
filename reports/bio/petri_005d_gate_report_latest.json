@@ -1,0 +1,127 @@
+﻿{
+    "machine":  {
+                    "system":  "PETRI_DISH_PRO_005D_SINGLE_LAYER_BOTTOM_OVERLAY",
+                    "mode":  "resume_from_005C_double_layer_wound",
+                    "repo":  "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro",
+                    "started_utc":  "2026-07-09T10:27:08.2344140Z",
+                    "active_wound":  "005D single-layer contract failed: old binding still present:bottomLayoutSeal.js, old binding still present:bottomDockVisibleSeal.js",
+                    "stage_policy":  "intended_files_only",
+                    "claim_boundary":  "005D changes Electron UI layout/rendering only.",
+                    "status":  "failed",
+                    "finished_utc":  "2026-07-09T10:27:08.4195468Z",
+                    "gates":  [
+                                  {
+                                      "gate":  "GATE_01_RESUME_FROM_005C",
+                                      "status":  "pass",
+                                      "utc":  "2026-07-09T10:27:08.2615998Z",
+                                      "evidence":  {
+                                                       "styles":  "visible",
+                                                       "index":  "visible"
+                                                   }
+                                  },
+                                  {
+                                      "gate":  "GATE_02_BACKUP_INTENDED_FILES",
+                                      "status":  "pass",
+                                      "utc":  "2026-07-09T10:27:08.2895241Z",
+                                      "evidence":  {
+                                                       "backup_dir":  "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_005d_20260709_062708",
+                                                       "copied":  [
+                                                                      "electron\\renderer\\index.html",
+                                                                      "electron\\renderer\\styles.css",
+                                                                      "README.md",
+                                                                      "ROADMAP.md"
+                                                                  ]
+                                                   }
+                                  },
+                                  {
+                                      "gate":  "GATE_03_WRITE_SINGLE_LAYER_JS",
+                                      "status":  "pass",
+                                      "utc":  "2026-07-09T10:27:08.2989902Z",
+                                      "evidence":  {
+                                                       "js":  "electron/renderer/bottomSingleLayerSeal.js"
+                                                   }
+                                  },
+                                  {
+                                      "gate":  "GATE_04_PATCH_SINGLE_LAYER_CSS",
+                                      "status":  "pass",
+                                      "utc":  "2026-07-09T10:27:08.3218655Z",
+                                      "evidence":  {
+                                                       "marker":  "PETRI 005D SINGLE LAYER BOTTOM OVERLAY",
+                                                       "css":  "electron/renderer/styles.css"
+                                                   }
+                                  },
+                                  {
+                                      "gate":  "GATE_05_REMOVE_OLD_BOTTOM_BINDINGS_AND_BIND_005D",
+                                      "status":  "pass",
+                                      "utc":  "2026-07-09T10:27:08.3635430Z",
+                                      "evidence":  {
+                                                       "removed":  "004Z/005A/005B/005C bottom bindings",
+                                                       "added":  "bottomSingleLayerSeal.js"
+                                                   }
+                                  },
+                                  {
+                                      "gate":  "005D_EXCEPTION",
+                                      "status":  "fail",
+                                      "utc":  "2026-07-09T10:27:08.4168693Z",
+                                      "error":  "005D single-layer contract failed: old binding still present:bottomLayoutSeal.js, old binding still present:bottomDockVisibleSeal.js"
+                                  }
+                              ]
+                },
+    "gates":  [
+                  {
+                      "gate":  "GATE_01_RESUME_FROM_005C",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T10:27:08.2615998Z",
+                      "evidence":  {
+                                       "styles":  "visible",
+                                       "index":  "visible"
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_02_BACKUP_INTENDED_FILES",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T10:27:08.2895241Z",
+                      "evidence":  {
+                                       "backup_dir":  "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_005d_20260709_062708",
+                                       "copied":  [
+                                                      "electron\\renderer\\index.html",
+                                                      "electron\\renderer\\styles.css",
+                                                      "README.md",
+                                                      "ROADMAP.md"
+                                                  ]
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_03_WRITE_SINGLE_LAYER_JS",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T10:27:08.2989902Z",
+                      "evidence":  {
+                                       "js":  "electron/renderer/bottomSingleLayerSeal.js"
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_04_PATCH_SINGLE_LAYER_CSS",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T10:27:08.3218655Z",
+                      "evidence":  {
+                                       "marker":  "PETRI 005D SINGLE LAYER BOTTOM OVERLAY",
+                                       "css":  "electron/renderer/styles.css"
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_05_REMOVE_OLD_BOTTOM_BINDINGS_AND_BIND_005D",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T10:27:08.3635430Z",
+                      "evidence":  {
+                                       "removed":  "004Z/005A/005B/005C bottom bindings",
+                                       "added":  "bottomSingleLayerSeal.js"
+                                   }
+                  },
+                  {
+                      "gate":  "005D_EXCEPTION",
+                      "status":  "fail",
+                      "utc":  "2026-07-09T10:27:08.4168693Z",
+                      "error":  "005D single-layer contract failed: old binding still present:bottomLayoutSeal.js, old binding still present:bottomDockVisibleSeal.js"
+                  }
+              ]
+}

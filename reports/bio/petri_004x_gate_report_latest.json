@@ -1,0 +1,107 @@
+{
+  "gates": [
+    {
+      "duration_ms": 0,
+      "evidence": {
+        "digest": "reports/bio/failure_digest_latest.md",
+        "resume_from": "004W"
+      },
+      "gate": "GATE_01_RESUME_FROM_004W_DIGEST",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 5,
+      "evidence": {
+        "backup_dir": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_004x_20260708_220205",
+        "copied": [
+          "config/preset_cards.json",
+          "config/metric_cards.json",
+          "README.md",
+          "ROADMAP.md"
+        ]
+      },
+      "gate": "GATE_02_BACKUP_INTENDED_FILES",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 4,
+      "evidence": {
+        "cards": 8,
+        "metrics": 13,
+        "sections": [
+          "antibiotic_selection",
+          "antibody_binding_screen",
+          "drug_response_screen",
+          "microbial_competition"
+        ]
+      },
+      "gate": "GATE_03_PATCH_SECTIONS_AND_KILL_CURVE_PROXY",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 2918,
+      "error": "004X could not fully seal tests after adaptive patch loop. Digest is saved at reports/bio/failure_digest_latest.md. ...............................E....\n======================================================================\nERROR: test_preset_card_registry_has_drug_and_antibody_presets (test_preset_cards_004o.PresetCards004OTests.test_preset_card_registry_has_drug_and_antibody_presets)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\tests\\test_preset_cards_004o.py\", line 16, in test_preset_card_registry_has_drug_and_antibody_presets\n    self.assertIn('metric_cards', cfg['presets']['antibiotic_selection']['sections'])\n                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nKeyError: 'sections'\n\n----------------------------------------------------------------------\nRan 36 tests in 0.437s\n\nFAILED (errors=1)\n",
+      "gate": "GATE_04_ADAPTIVE_TEST_SEAL",
+      "status": "fail"
+    }
+  ],
+  "machine": {
+    "active_wound": "004X could not fully seal tests after adaptive patch loop. Digest is saved at reports/bio/failure_digest_latest.md. ...............................E....\n======================================================================\nERROR: test_preset_card_registry_has_drug_and_antibody_presets (test_preset_cards_004o.PresetCards004OTests.test_preset_card_registry_has_drug_and_antibody_presets)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\tests\\test_preset_cards_004o.py\", line 16, in test_preset_card_registry_has_drug_and_antibody_presets\n    self.assertIn('metric_cards', cfg['presets']['antibiotic_selection']['sections'])\n                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nKeyError: 'sections'\n\n---------------------------------------------------------",
+    "claim_boundary": "004X is a config contract seal. Drug, antibody, and metric cards remain source-gated simulation proxies only.",
+    "failure_digest": "reports/bio/failure_digest_latest.md",
+    "finished_utc": "2026-07-09T02:02:08.814660+00:00",
+    "gates": [
+      {
+        "duration_ms": 0,
+        "evidence": {
+          "digest": "reports/bio/failure_digest_latest.md",
+          "resume_from": "004W"
+        },
+        "gate": "GATE_01_RESUME_FROM_004W_DIGEST",
+        "status": "pass"
+      },
+      {
+        "duration_ms": 5,
+        "evidence": {
+          "backup_dir": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_004x_20260708_220205",
+          "copied": [
+            "config/preset_cards.json",
+            "config/metric_cards.json",
+            "README.md",
+            "ROADMAP.md"
+          ]
+        },
+        "gate": "GATE_02_BACKUP_INTENDED_FILES",
+        "status": "pass"
+      },
+      {
+        "duration_ms": 4,
+        "evidence": {
+          "cards": 8,
+          "metrics": 13,
+          "sections": [
+            "antibiotic_selection",
+            "antibody_binding_screen",
+            "drug_response_screen",
+            "microbial_competition"
+          ]
+        },
+        "gate": "GATE_03_PATCH_SECTIONS_AND_KILL_CURVE_PROXY",
+        "status": "pass"
+      },
+      {
+        "duration_ms": 2918,
+        "error": "004X could not fully seal tests after adaptive patch loop. Digest is saved at reports/bio/failure_digest_latest.md. ...............................E....\n======================================================================\nERROR: test_preset_card_registry_has_drug_and_antibody_presets (test_preset_cards_004o.PresetCards004OTests.test_preset_card_registry_has_drug_and_antibody_presets)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\tests\\test_preset_cards_004o.py\", line 16, in test_preset_card_registry_has_drug_and_antibody_presets\n    self.assertIn('metric_cards', cfg['presets']['antibiotic_selection']['sections'])\n                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nKeyError: 'sections'\n\n----------------------------------------------------------------------\nRan 36 tests in 0.437s\n\nFAILED (errors=1)\n",
+        "gate": "GATE_04_ADAPTIVE_TEST_SEAL",
+        "status": "fail"
+      }
+    ],
+    "mode": "resume_from_004w_digest",
+    "repo": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro",
+    "stage_policy": "intended_files_only",
+    "started_utc": "2026-07-09T02:02:05.884342+00:00",
+    "status": "failed",
+    "system": "PETRI_DISH_PRO_004X_PRESET_SECTIONS_KILL_CURVE_PROXY_SEAL",
+    "unit_tests": "needs_followup"
+  }
+}

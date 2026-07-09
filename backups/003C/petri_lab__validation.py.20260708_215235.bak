@@ -1,0 +1,16 @@
+from __future__ import annotations
+from typing import Any
+
+def validate_run(run: dict[str, Any]) -> dict[str, Any]:
+    failures, warnings = [], []
+    if run.get("claim_level") != "educational_research_simulation_only": failures.append("claim_level must stay educational_research_simulation_only")
+    if run.get("grid", {}).get("size", 0) < 8: failures.append("grid too small")
+    if not run.get("organisms"): failures.append("no organisms defined")
+    if not run.get("timeseries"): failures.append("missing timeseries")
+    fields = run.get("fields", {})
+    for name in ["nutrient", "oxygen", "toxin", "waste", "density"]:
+        if name not in fields: failures.append(f"missing field {name}")
+    for oid, value in run.get("final_population", {}).items():
+        if value < -1e-9: failures.append(f"negative population for {oid}")
+        if value == 0: warnings.append(f"{oid} extinct by final step")
+    return {"status":"pass" if not failures else "fail", "failures":failures, "warnings":warnings, "claim_boundary":"Simulation artifacts are exploratory model outputs, not clinical, diagnostic, wet-lab, or treatment evidence.", "checks":{"claim_level_locked": run.get("claim_level") == "educational_research_simulation_only", "organism_count": len(run.get("organisms", [])), "has_fields": all(k in fields for k in ["nutrient","oxygen","toxin","waste","density"])}}

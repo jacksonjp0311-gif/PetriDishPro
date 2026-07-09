@@ -1,0 +1,48 @@
+﻿{
+    "system":  "PETRI_DISH_PRO_004T_FAILURE_DIGEST_RUNNER",
+    "mode":  "failure_output_compression_harness",
+    "repo":  "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro",
+    "started_utc":  "2026-07-09T01:49:44.0551127Z",
+    "active_wound":  "..............................FE....",
+    "stage_policy":  "intended_files_only",
+    "claim_boundary":  "004T changes developer/operator diagnostics only. It does not change simulation science, UI claims, drug claims, antibody claims, wet-lab evidence, or clinical status.",
+    "status":  "failed",
+    "finished_utc":  "2026-07-09T01:49:44.8771649Z",
+    "gates":  [
+                  {
+                      "gate":  "GATE_01_RESUME_FROM_CURRENT_FAILURE_CONTEXT",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T01:49:44.0950099Z",
+                      "evidence":  {
+                                       "required_surfaces":  "visible"
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_02_BACKUP_INTENDED_FILES",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T01:49:44.1229560Z",
+                      "evidence":  {
+                                       "backup_dir":  "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_004t_20260708_214944",
+                                       "copied":  [
+                                                      "README.md",
+                                                      "ROADMAP.md"
+                                                  ]
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_03_WRITE_FAILURE_DIGEST_TOOL",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T01:49:44.1330292Z",
+                      "evidence":  {
+                                       "tool":  "tools/petri_failure_digest.py",
+                                       "wrapper":  "RUN_TESTS_DIGEST.ps1"
+                                   }
+                  },
+                  {
+                      "gate":  "004T_EXCEPTION",
+                      "status":  "fail",
+                      "utc":  "2026-07-09T01:49:44.8746148Z",
+                      "error":  "..............................FE...."
+                  }
+              ]
+}

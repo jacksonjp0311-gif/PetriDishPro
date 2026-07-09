@@ -1,0 +1,59 @@
+{
+  "active_wound": "C:\\Program Files\\Python312\\python.exe -m petri_lab.particle_state --root . failed with exit code 1\nSTDOUT:\n\nSTDERR:\nTraceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\petri_lab\\particle_state.py\", line 240, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\petri_lab\\particle_state.py\", line 234, in main\n    result = generate_particle_state(args.root, args.run_id)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\petri_",
+  "active_wounds": [
+    "electron_still_synthesizes_cell_positions",
+    "python_kernel_does_not_emit_cells_json",
+    "renderer_needs_artifact_backed_particles",
+    "run_receipts_need_spatial_state_paths"
+  ],
+  "claim_boundary": "004M emits deterministic spatial cell/particle artifacts from the Python side for renderer consumption. This is still exploratory simulation, not microscopy evidence or biological validation.",
+  "failed_gate": "GATE_04_GENERATE_INITIAL_PARTICLE_ARTIFACTS",
+  "finished_utc": "2026-07-09T00:20:42.010913+00:00",
+  "gates": [
+    {
+      "duration_ms": 0,
+      "evidence": {
+        "required_surfaces": "visible",
+        "resume_from": "004L"
+      },
+      "gate": "GATE_01_RESUME_FROM_004L",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 5,
+      "evidence": {
+        "backup_dir": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_004m_20260708_202040",
+        "copied": [
+          "electron/main.js",
+          "electron/preload.js",
+          "electron/renderer/app.js",
+          "README.md",
+          "ROADMAP.md",
+          "CLAIM_BOUNDARY.md"
+        ]
+      },
+      "gate": "GATE_02_BACKUP_INTENDED_FILES",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 0,
+      "evidence": {
+        "patched": "petri_lab/particle_state.py"
+      },
+      "gate": "GATE_03_PATCH_PYTHON_PARTICLE_STATE_MODULE",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 1244,
+      "error": "C:\\Program Files\\Python312\\python.exe -m petri_lab.particle_state --root . failed with exit code 1\nSTDOUT:\n\nSTDERR:\nTraceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\petri_lab\\particle_state.py\", line 240, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\petri_lab\\particle_state.py\", line 234, in main\n    result = generate_particle_state(args.root, args.run_id)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\petri_lab\\particle_state.py\", line 204, in generate_particle_state\n    \"generated_utc\": __import__(\"datetime\").datetime.datetime.utcnow().isoformat() + \"Z\",\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: type object 'datetime.datetime' has no attribute 'datetime'\n",
+      "gate": "GATE_04_GENERATE_INITIAL_PARTICLE_ARTIFACTS",
+      "status": "fail"
+    }
+  ],
+  "mode": "resume_from_004L_registry_seal",
+  "repo": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro",
+  "stage_policy": "intended_files_only",
+  "started_utc": "2026-07-09T00:20:40.751150+00:00",
+  "status": "failed",
+  "system": "PETRI_DISH_PRO_004M_PYTHON_PARTICLE_STATE_ARTIFACTS"
+}

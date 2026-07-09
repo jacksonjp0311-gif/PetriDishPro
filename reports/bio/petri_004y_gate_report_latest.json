@@ -1,0 +1,173 @@
+{
+  "gates": [
+    {
+      "duration_ms": 0,
+      "evidence": {
+        "failing_path": "cfg['presets']['antibiotic_selection']['sections']",
+        "resume_from": "004X_GATE_03"
+      },
+      "gate": "GATE_01_RESUME_FROM_004X_GATE_03",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 10,
+      "evidence": {
+        "backup_dir": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_004y_20260708_221251",
+        "copied": [
+          "config/preset_cards.json",
+          "config/metric_cards.json",
+          "tests/test_preset_sections_004y.py",
+          "docs/updates/PETRI_004Y_NESTED_PRESET_SECTIONS_SEAL.md",
+          "README.md",
+          "ROADMAP.md"
+        ]
+      },
+      "gate": "GATE_02_BACKUP_INTENDED_FILES",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 4,
+      "evidence": {
+        "cards": 8,
+        "metrics": 13,
+        "preset_sections": [
+          "antibiotic_selection",
+          "antibody_binding_screen",
+          "drug_response_screen",
+          "microbial_competition"
+        ]
+      },
+      "gate": "GATE_03_PATCH_NESTED_PRESET_SECTIONS",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 20,
+      "evidence": {
+        "static_precheck": "pass"
+      },
+      "gate": "GATE_04_STATIC_CHECK_BEFORE_TESTS",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 744,
+      "evidence": {
+        "attempts": 1,
+        "tests": "pass"
+      },
+      "gate": "GATE_05_UNIT_TESTS_WITH_ONE_ADAPTIVE_RETRY",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 608,
+      "evidence": {
+        "compile": "pass",
+        "demo": "pass",
+        "doc": "docs/updates/PETRI_004Y_NESTED_PRESET_SECTIONS_SEAL.md",
+        "test": "tests/test_preset_sections_004y.py"
+      },
+      "gate": "GATE_06_COMPILE_DEMO_DOCS",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 720,
+      "evidence": {
+        "commit": false,
+        "push": false,
+        "tests": "pass"
+      },
+      "gate": "GATE_07_FINAL_UNITTEST_OPTIONAL_GIT",
+      "status": "pass"
+    }
+  ],
+  "machine": {
+    "active_wound": "preset_cards_presets_antibiotic_selection_missing_nested_sections_metric_cards",
+    "claim_boundary": "004Y is a config contract seal. Drug, antibody, and metric cards remain source-gated simulation proxies only.",
+    "finished_utc": "2026-07-09T02:12:53.988807+00:00",
+    "gates": [
+      {
+        "duration_ms": 0,
+        "evidence": {
+          "failing_path": "cfg['presets']['antibiotic_selection']['sections']",
+          "resume_from": "004X_GATE_03"
+        },
+        "gate": "GATE_01_RESUME_FROM_004X_GATE_03",
+        "status": "pass"
+      },
+      {
+        "duration_ms": 10,
+        "evidence": {
+          "backup_dir": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_004y_20260708_221251",
+          "copied": [
+            "config/preset_cards.json",
+            "config/metric_cards.json",
+            "tests/test_preset_sections_004y.py",
+            "docs/updates/PETRI_004Y_NESTED_PRESET_SECTIONS_SEAL.md",
+            "README.md",
+            "ROADMAP.md"
+          ]
+        },
+        "gate": "GATE_02_BACKUP_INTENDED_FILES",
+        "status": "pass"
+      },
+      {
+        "duration_ms": 4,
+        "evidence": {
+          "cards": 8,
+          "metrics": 13,
+          "preset_sections": [
+            "antibiotic_selection",
+            "antibody_binding_screen",
+            "drug_response_screen",
+            "microbial_competition"
+          ]
+        },
+        "gate": "GATE_03_PATCH_NESTED_PRESET_SECTIONS",
+        "status": "pass"
+      },
+      {
+        "duration_ms": 20,
+        "evidence": {
+          "static_precheck": "pass"
+        },
+        "gate": "GATE_04_STATIC_CHECK_BEFORE_TESTS",
+        "status": "pass"
+      },
+      {
+        "duration_ms": 744,
+        "evidence": {
+          "attempts": 1,
+          "tests": "pass"
+        },
+        "gate": "GATE_05_UNIT_TESTS_WITH_ONE_ADAPTIVE_RETRY",
+        "status": "pass"
+      },
+      {
+        "duration_ms": 608,
+        "evidence": {
+          "compile": "pass",
+          "demo": "pass",
+          "doc": "docs/updates/PETRI_004Y_NESTED_PRESET_SECTIONS_SEAL.md",
+          "test": "tests/test_preset_sections_004y.py"
+        },
+        "gate": "GATE_06_COMPILE_DEMO_DOCS",
+        "status": "pass"
+      },
+      {
+        "duration_ms": 720,
+        "evidence": {
+          "commit": false,
+          "push": false,
+          "tests": "pass"
+        },
+        "gate": "GATE_07_FINAL_UNITTEST_OPTIONAL_GIT",
+        "status": "pass"
+      }
+    ],
+    "mode": "resume_from_004x_gate_03",
+    "repo": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro",
+    "stage_policy": "intended_files_only",
+    "started_utc": "2026-07-09T02:12:51.876897+00:00",
+    "status": "sealed",
+    "system": "PETRI_DISH_PRO_004Y_NESTED_PRESET_SECTIONS_SEAL"
+  }
+}

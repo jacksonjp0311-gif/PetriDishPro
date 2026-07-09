@@ -1,0 +1,99 @@
+﻿{
+    "system":  "PETRI_DISH_PRO_005A_BOTTOM_ROW_NO_SCROLL_SEAL",
+    "mode":  "resume_from_004Z_sealed",
+    "repo":  "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro",
+    "started_utc":  "2026-07-09T02:22:19.5911590Z",
+    "active_wound":  "004Z_fixed_dock_created_large_vertical_gap_and_internal_scrollbars",
+    "stage_policy":  "intended_files_only",
+    "claim_boundary":  "005A changes Electron UI layout only. It does not change simulation science, organisms, drug claims, antibody claims, wet-lab evidence, or clinical status.",
+    "status":  "sealed",
+    "finished_utc":  "2026-07-09T02:22:20.7913968Z",
+    "gates":  [
+                  {
+                      "gate":  "GATE_01_RESUME_FROM_004Z",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T02:22:19.6176001Z",
+                      "evidence":  {
+                                       "styles":  "visible",
+                                       "prior_layout_seal":  "visible",
+                                       "index":  "visible"
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_02_BACKUP_INTENDED_FILES",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T02:22:19.6406815Z",
+                      "evidence":  {
+                                       "backup_dir":  "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_005a_20260708_222219",
+                                       "copied":  [
+                                                      "electron\\renderer\\index.html",
+                                                      "electron\\renderer\\styles.css",
+                                                      "README.md",
+                                                      "ROADMAP.md"
+                                                  ]
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_03_PATCH_NO_SCROLL_LAYOUT_JS",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T02:22:19.6489250Z",
+                      "evidence":  {
+                                       "js":  "electron/renderer/bottomNoScrollSeal.js"
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_04_PATCH_CSS_NATURAL_ROW_OVERRIDES",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T02:22:19.6569204Z",
+                      "evidence":  {
+                                       "marker":  "PETRI 005A BOTTOM ROW NO SCROLL SEAL",
+                                       "css":  "electron/renderer/styles.css"
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_05_BIND_SCRIPT_AFTER_004Z",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T02:22:19.6642854Z",
+                      "evidence":  {
+                                       "script":  "bottomNoScrollSeal.js",
+                                       "index":  "electron/renderer/index.html"
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_06_STATIC_LAYOUT_CONTRACT",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T02:22:19.7032991Z",
+                      "evidence":  {
+                                       "contract":  "natural bottom row no-scroll override present"
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_07_RUN_NONSTRICT_TEST_DIGEST",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T02:22:20.7559438Z",
+                      "evidence":  {
+                                       "note":  "non-strict; UI layout seal validated by static contract",
+                                       "digest_runner":  "ran",
+                                       "exit_code":  0
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_08_PATCH_DOCS",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T02:22:20.7838882Z",
+                      "evidence":  {
+                                       "doc":  "docs/updates/PETRI_005A_BOTTOM_ROW_NO_SCROLL_SEAL.md"
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_09_OPTIONAL_INTENDED_FILES_GIT_SEAL",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T02:22:20.7873946Z",
+                      "evidence":  {
+                                       "status":  "skipped",
+                                       "push":  false,
+                                       "commit":  false
+                                   }
+                  }
+              ]
+}

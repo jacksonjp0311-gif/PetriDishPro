@@ -1,0 +1,69 @@
+﻿{
+    "system":  "PETRI_DISH_PRO_004V_FAILURE_DIGEST_CMD_SEAL",
+    "mode":  "resume_after_004u_parser_wound",
+    "repo":  "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro",
+    "started_utc":  "2026-07-09T01:53:56.7454358Z",
+    "active_wound":  "Digest contract missing: wrapper:-Strict",
+    "stage_policy":  "intended_files_only",
+    "claim_boundary":  "004V changes developer/operator diagnostics only. It does not change simulation science, UI claims, drug claims, antibody claims, wet-lab evidence, or clinical status.",
+    "digest_runner_exit_code":  0,
+    "status":  "failed",
+    "finished_utc":  "2026-07-09T01:53:57.8470735Z",
+    "gates":  [
+                  {
+                      "gate":  "GATE_01_RESUME_FROM_004T_OR_CURRENT",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T01:53:56.7750946Z",
+                      "evidence":  {
+                                       "required_surfaces":  "visible"
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_02_BACKUP_INTENDED_FILES",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T01:53:56.7968912Z",
+                      "evidence":  {
+                                       "backup_dir":  "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_004v_20260708_215356",
+                                       "copied":  [
+                                                      "tools\\petri_failure_digest.py",
+                                                      "RUN_TESTS_DIGEST.ps1",
+                                                      "README.md",
+                                                      "ROADMAP.md"
+                                                  ]
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_03_WRITE_DIGEST_TOOL_IF_MISSING",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T01:53:56.8055868Z",
+                      "evidence":  {
+                                       "tool":  "tools/petri_failure_digest.py"
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_04_PATCH_CMD_SAFE_RUNNER",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T01:53:56.8092381Z",
+                      "evidence":  {
+                                       "seal":  "cmd.exe redirection captures unittest stderr",
+                                       "wrapper":  "RUN_TESTS_DIGEST.ps1"
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_05_RUN_DIGEST_WITH_CMD_SAFE_RUNNER",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T01:53:57.8278439Z",
+                      "evidence":  {
+                                       "wrapper_exit_code":  0,
+                                       "digest_json":  "reports/bio/failure_digest_latest.json",
+                                       "digest_md":  "reports/bio/failure_digest_latest.md"
+                                   }
+                  },
+                  {
+                      "gate":  "004V_EXCEPTION",
+                      "status":  "fail",
+                      "utc":  "2026-07-09T01:53:57.8440649Z",
+                      "error":  "Digest contract missing: wrapper:-Strict"
+                  }
+              ]
+}

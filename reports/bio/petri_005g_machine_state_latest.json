@@ -1,0 +1,99 @@
+{
+  "active_wound": "005F failed in PowerShell replace before writing layout patch; bottom overlay still leaves dead space",
+  "claim_boundary": "005G changes Electron UI layout only. No simulation, organism, drug, antibody, wet-lab, diagnostic, treatment, species-ID, or biosafety claims are changed.",
+  "finished_utc": "2026-07-09T10:37:20.894092+00:00",
+  "gates": [
+    {
+      "duration_ms": 1,
+      "evidence": {
+        "failed_patch": "005F PowerShell -replace",
+        "resume_surface": "005E single-layer overlay"
+      },
+      "gate": "GATE_01_RESUME_FROM_005E_OR_005D",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 10,
+      "evidence": {
+        "backup_dir": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_005g_20260709_063719",
+        "copied": [
+          "electron/renderer/index.html",
+          "electron/renderer/styles.css",
+          "README.md",
+          "ROADMAP.md"
+        ]
+      },
+      "gate": "GATE_02_BACKUP_INTENDED_FILES",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 1,
+      "evidence": {
+        "js": "electron/renderer/bottomFillViewportSeal.js",
+        "strategy": "separate last-loaded override; no PowerShell replace"
+      },
+      "gate": "GATE_03_WRITE_SAFE_FILL_OVERRIDE_JS",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 1,
+      "evidence": {
+        "binding": "bottomFillViewportSeal.js bound exactly once and last",
+        "index": "electron/renderer/index.html"
+      },
+      "gate": "GATE_04_BIND_OVERRIDE_LAST",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 2,
+      "evidence": {
+        "css": "electron/renderer/styles.css",
+        "marker": "PETRI 005G SAFE BOTTOM FILL OVERRIDE"
+      },
+      "gate": "GATE_05_APPEND_CSS_OVERRIDE",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 75,
+      "evidence": {
+        "contract": "safe bottom fill override bound after single-layer overlay"
+      },
+      "gate": "GATE_06_STATIC_CONTRACT",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 1086,
+      "evidence": {
+        "digest_runner": "ran",
+        "exit_code": 0,
+        "mode": "non-strict"
+      },
+      "gate": "GATE_07_RUN_TEST_DIGEST_NON_STRICT",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 3,
+      "evidence": {
+        "doc": "docs/updates/PETRI_005G_SAFE_BOTTOM_FILL_OVERRIDE.md"
+      },
+      "gate": "GATE_08_DOCS",
+      "status": "pass"
+    },
+    {
+      "duration_ms": 0,
+      "evidence": {
+        "commit": false,
+        "push": false,
+        "status": "skipped"
+      },
+      "gate": "GATE_09_OPTIONAL_GIT",
+      "status": "pass"
+    }
+  ],
+  "mode": "resume_after_005f_powershell_replace_failure",
+  "repo": "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro",
+  "stage_policy": "intended_files_only",
+  "started_utc": "2026-07-09T10:37:19.712483+00:00",
+  "status": "sealed",
+  "system": "PETRI_DISH_PRO_005G_SAFE_BOTTOM_FILL_OVERRIDE"
+}

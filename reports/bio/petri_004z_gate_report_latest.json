@@ -1,0 +1,187 @@
+﻿{
+    "machine":  {
+                    "system":  "PETRI_DISH_PRO_004Z_BOTTOM_DOCK_LAYOUT_SEAL",
+                    "mode":  "resume_from_004Y_sealed",
+                    "repo":  "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro",
+                    "started_utc":  "2026-07-09T02:18:08.0778516Z",
+                    "active_wound":  "bottom_dashboard_panels_have_bad_flow_scrollbars_duplicate_emergent_panel_and_cramped_receipt",
+                    "stage_policy":  "intended_files_only",
+                    "claim_boundary":  "004Z changes Electron UI layout only. It does not change simulation science, organisms, drug claims, antibody claims, wet-lab evidence, or clinical status.",
+                    "status":  "sealed",
+                    "finished_utc":  "2026-07-09T02:18:09.3439176Z",
+                    "gates":  [
+                                  {
+                                      "gate":  "GATE_01_RESUME_FROM_004Y",
+                                      "status":  "pass",
+                                      "utc":  "2026-07-09T02:18:08.1070071Z",
+                                      "evidence":  {
+                                                       "styles":  "visible",
+                                                       "index":  "visible"
+                                                   }
+                                  },
+                                  {
+                                      "gate":  "GATE_02_BACKUP_INTENDED_FILES",
+                                      "status":  "pass",
+                                      "utc":  "2026-07-09T02:18:08.1350199Z",
+                                      "evidence":  {
+                                                       "backup_dir":  "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_004z_20260708_221808",
+                                                       "copied":  [
+                                                                      "electron\\renderer\\index.html",
+                                                                      "electron\\renderer\\styles.css",
+                                                                      "README.md",
+                                                                      "ROADMAP.md"
+                                                                  ]
+                                                   }
+                                  },
+                                  {
+                                      "gate":  "GATE_03_PATCH_BOTTOM_LAYOUT_JS",
+                                      "status":  "pass",
+                                      "utc":  "2026-07-09T02:18:08.1418436Z",
+                                      "evidence":  {
+                                                       "js":  "electron/renderer/bottomLayoutSeal.js"
+                                                   }
+                                  },
+                                  {
+                                      "gate":  "GATE_04_PATCH_CSS_DOCK_OVERRIDES",
+                                      "status":  "pass",
+                                      "utc":  "2026-07-09T02:18:08.1527184Z",
+                                      "evidence":  {
+                                                       "marker":  "PETRI 004Z BOTTOM DOCK LAYOUT SEAL",
+                                                       "css":  "electron/renderer/styles.css"
+                                                   }
+                                  },
+                                  {
+                                      "gate":  "GATE_05_PATCH_INDEX_SCRIPT_BINDING",
+                                      "status":  "pass",
+                                      "utc":  "2026-07-09T02:18:08.1603179Z",
+                                      "evidence":  {
+                                                       "script":  "bottomLayoutSeal.js",
+                                                       "index":  "electron/renderer/index.html"
+                                                   }
+                                  },
+                                  {
+                                      "gate":  "GATE_06_STATIC_LAYOUT_CONTRACT",
+                                      "status":  "pass",
+                                      "utc":  "2026-07-09T02:18:08.2010859Z",
+                                      "evidence":  {
+                                                       "contract":  "bottom dock script and CSS present"
+                                                   }
+                                  },
+                                  {
+                                      "gate":  "GATE_07_RUN_NONSTRICT_TEST_DIGEST",
+                                      "status":  "pass",
+                                      "utc":  "2026-07-09T02:18:09.3053270Z",
+                                      "evidence":  {
+                                                       "note":  "non-strict; UI layout seal is validated by static contract",
+                                                       "digest_runner":  "ran",
+                                                       "exit_code":  0
+                                                   }
+                                  },
+                                  {
+                                      "gate":  "GATE_08_PATCH_DOCS",
+                                      "status":  "pass",
+                                      "utc":  "2026-07-09T02:18:09.3377718Z",
+                                      "evidence":  {
+                                                       "doc":  "docs/updates/PETRI_004Z_BOTTOM_DOCK_LAYOUT_SEAL.md"
+                                                   }
+                                  },
+                                  {
+                                      "gate":  "GATE_09_OPTIONAL_INTENDED_FILES_GIT_SEAL",
+                                      "status":  "pass",
+                                      "utc":  "2026-07-09T02:18:09.3419173Z",
+                                      "evidence":  {
+                                                       "status":  "skipped",
+                                                       "push":  false,
+                                                       "commit":  false
+                                                   }
+                                  }
+                              ]
+                },
+    "gates":  [
+                  {
+                      "gate":  "GATE_01_RESUME_FROM_004Y",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T02:18:08.1070071Z",
+                      "evidence":  {
+                                       "styles":  "visible",
+                                       "index":  "visible"
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_02_BACKUP_INTENDED_FILES",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T02:18:08.1350199Z",
+                      "evidence":  {
+                                       "backup_dir":  "C:\\Users\\jacks\\OneDrive\\Desktop\\PetriDishPro\\_backup\\petri_004z_20260708_221808",
+                                       "copied":  [
+                                                      "electron\\renderer\\index.html",
+                                                      "electron\\renderer\\styles.css",
+                                                      "README.md",
+                                                      "ROADMAP.md"
+                                                  ]
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_03_PATCH_BOTTOM_LAYOUT_JS",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T02:18:08.1418436Z",
+                      "evidence":  {
+                                       "js":  "electron/renderer/bottomLayoutSeal.js"
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_04_PATCH_CSS_DOCK_OVERRIDES",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T02:18:08.1527184Z",
+                      "evidence":  {
+                                       "marker":  "PETRI 004Z BOTTOM DOCK LAYOUT SEAL",
+                                       "css":  "electron/renderer/styles.css"
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_05_PATCH_INDEX_SCRIPT_BINDING",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T02:18:08.1603179Z",
+                      "evidence":  {
+                                       "script":  "bottomLayoutSeal.js",
+                                       "index":  "electron/renderer/index.html"
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_06_STATIC_LAYOUT_CONTRACT",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T02:18:08.2010859Z",
+                      "evidence":  {
+                                       "contract":  "bottom dock script and CSS present"
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_07_RUN_NONSTRICT_TEST_DIGEST",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T02:18:09.3053270Z",
+                      "evidence":  {
+                                       "note":  "non-strict; UI layout seal is validated by static contract",
+                                       "digest_runner":  "ran",
+                                       "exit_code":  0
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_08_PATCH_DOCS",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T02:18:09.3377718Z",
+                      "evidence":  {
+                                       "doc":  "docs/updates/PETRI_004Z_BOTTOM_DOCK_LAYOUT_SEAL.md"
+                                   }
+                  },
+                  {
+                      "gate":  "GATE_09_OPTIONAL_INTENDED_FILES_GIT_SEAL",
+                      "status":  "pass",
+                      "utc":  "2026-07-09T02:18:09.3419173Z",
+                      "evidence":  {
+                                       "status":  "skipped",
+                                       "push":  false,
+                                       "commit":  false
+                                   }
+                  }
+              ]
+}
