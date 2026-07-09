@@ -1,4 +1,4 @@
-# PetriDishPro / Organism Gate
+﻿# PetriDishPro / Organism Gate
 
 ![Organism Gate entry point](docs/assets/organism-gate-entrypoint.svg)
 
@@ -147,3 +147,27 @@ Use it as an educational simulation and visualization platform only.
 ## License
 
 This repository is published under the MIT License.
+
+## Public smoke check
+
+Before publishing a release or sharing a build, run:
+
+```powershell
+./scripts/public_smoke_check.ps1 -NoNodeInstall
+```
+
+For a launcher attempt from a public clone:
+
+```powershell
+./scripts/launch_organism_gate.ps1
+```
+
+Release checklist and beta notes:
+
+- [`docs/PUBLIC_RELEASE_CHECKLIST.md`](docs/PUBLIC_RELEASE_CHECKLIST.md)
+- [`docs/releases/v0.6.0-beta.md`](docs/releases/v0.6.0-beta.md)
+- [`docs/ROADMAP_PRO_LEVEL.md`](docs/ROADMAP_PRO_LEVEL.md)
+
+
+
+
